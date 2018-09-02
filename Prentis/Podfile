@@ -17,4 +17,7 @@ target 'Prentis' do
     # Pods for testing
   end
 
+
+  pod 'AgoraRtcEngine_iOS'
+
 end
