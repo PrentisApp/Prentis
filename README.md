@@ -1,5 +1,9 @@
 # Prentis
-Video Conferencing Website
+Video Conferencing Mobile Application
+
+Prentis (name pending) is an online video conferencing app taht allows users to have one on one interactions with thier favorite content creators, mentors or conversationalists.
+
+
 To start application 
 * Clone Repo
 Run command in terminal: 
