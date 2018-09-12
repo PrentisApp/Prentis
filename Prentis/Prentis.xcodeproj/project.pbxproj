@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A49B29B2148302900A6D2F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A49B29A2148302900A6D2F8 /* GoogleService-Info.plist */; };
+		0A49B2A12148379800A6D2F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A49B2A02148379800A6D2F8 /* LoginViewController.swift */; };
 		1FC30C5B213B36EC00FC68BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */; };
 		1FC30C5D213B36EC00FC68BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C5C213B36EC00FC68BA /* ViewController.swift */; };
 		1FC30C60213B36EC00FC68BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC30C5E213B36EC00FC68BA /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		055856C4337BD5DFA99F0EDC /* Pods_Prentis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prentis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A49B29A2148302900A6D2F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0A49B2A02148379800A6D2F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1A801ABE0C1D2E5CB75CAA19 /* Pods-PrentisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisUITests/Pods-PrentisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1FC30C57213B36EC00FC68BA /* Prentis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prentis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				1FC30C61213B36F000FC68BA /* Assets.xcassets */,
 				1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */,
 				1FC30C66213B36F000FC68BA /* Info.plist */,
+				0A49B29A2148302900A6D2F8 /* GoogleService-Info.plist */,
+				0A49B2A02148379800A6D2F8 /* LoginViewController.swift */,
 			);
 			path = Prentis;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 				1FC30C53213B36EB00FC68BA /* Sources */,
 				1FC30C54213B36EB00FC68BA /* Frameworks */,
 				1FC30C55213B36EB00FC68BA /* Resources */,
+				9F6E57AECDF8BCB787556D82 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FC30C65213B36F000FC68BA /* LaunchScreen.storyboard in Resources */,
+				0A49B29B2148302900A6D2F8 /* GoogleService-Info.plist in Resources */,
 				1FC30C62213B36F000FC68BA /* Assets.xcassets in Resources */,
 				1FC30C60213B36EC00FC68BA /* Main.storyboard in Resources */,
 			);
@@ -349,6 +357,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9F6E57AECDF8BCB787556D82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -356,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A49B2A12148379800A6D2F8 /* LoginViewController.swift in Sources */,
 				1FC30C5D213B36EC00FC68BA /* ViewController.swift in Sources */,
 				1FC30C5B213B36EC00FC68BA /* AppDelegate.swift in Sources */,
 			);
@@ -532,7 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5HR7QQ25H6;
+				DEVELOPMENT_TEAM = WVUW59QX7W;
 				INFOPLIST_FILE = Prentis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -551,7 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5HR7QQ25H6;
+				DEVELOPMENT_TEAM = WVUW59QX7W;
 				INFOPLIST_FILE = Prentis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
