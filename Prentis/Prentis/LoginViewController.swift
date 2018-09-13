@@ -34,6 +34,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var isLogin:Bool = true
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emailField.delegate = self
+        passwordField.delegate = self
+        
+        
+        
+        self.HideKeyboard()
+        
+        // Do any additional setup after loading the view.
+    }
+    
     @IBAction func loginControl(_ sender: Any) {
         isLogin = !isLogin
         
@@ -49,6 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func LoginAction(_ sender: Any) {
         guard let email = emailField.text else { print("Nope"); return }
         guard let password = passwordField.text else { print("Nope"); return }
+
         
         
             if isLogin{
@@ -56,6 +69,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     // ...
                     if let u = user {
                         // If the user is found, then login
+                        self.performSegue(withIdentifier: "toHomeScreen", sender: self)
                         print("You've logged in!")
                     }
                     else{
@@ -67,27 +81,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             else{
                 Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
                     // ...
-                   
                     if error == nil && user != nil{
+                        self.performSegue(withIdentifier: "toHomeScreen", sender: self)
                         print("User created")
                     }
                     else{
                         print("Could not create user")
                     }
-                    
                 }
-                
-
-                
             }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        self.HideKeyboard()
-        
-        // Do any additional setup after loading the view.
     }
     
 
