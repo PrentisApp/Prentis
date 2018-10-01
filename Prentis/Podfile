@@ -16,8 +16,7 @@ target 'Prentis' do
     inherit! :search_paths
     # Pods for testing
   end
-
-
+  pod 'Hero'
   pod 'AgoraRtcEngine_iOS'
 
 end
