@@ -18,5 +18,7 @@ target 'Prentis' do
   end
   pod 'Hero'
   pod 'AgoraRtcEngine_iOS'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end
