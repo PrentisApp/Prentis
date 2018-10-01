@@ -61,7 +61,6 @@ DEPENDENCIES:
   - AgoraRtcEngine_iOS
   - Firebase/Auth
   - Firebase/Core
-
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AgoraRtcEngine_iOS
@@ -90,5 +89,4 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
 PODFILE CHECKSUM: 7b6587539674242d1a862e334fe82fc8b3fbdab0
-
 COCOAPODS: 1.5.3
