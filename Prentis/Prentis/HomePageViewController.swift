@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -34,11 +35,56 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.usernameLabel.text = (document["username"] as! String)
         cell.bioLabel.text = (document["bio"] as! String)
         
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let imageRef = storageRef.child("ProfileImages/9Eif7xFDcRVTgbLfli6g5mrf4Dq1.jpg")
+        
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+            // Uh-oh, an error occurred!
+            } else {
+            // Data for "images/island.jpg" is returned
+            let image = UIImage(data: data!)
+            cell.profileImage.image = image
+            }
+        }
+            
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        docRef = Firestore.firestore().document("User/iFwuYQkAxOavvjBtEG00jHjGFp42").collection("Channel").document("ChannelName")
+//        var channelname = ["channelname": "This is the channel name!", "uid": 1] as [String : Any]
+//        docRef.setData(channelname)
+//
+//
+//        db.collection("User").document("iFwuYQkAxOavvjBtEG00jHjGFp42").collection("Channel").document("ChannelName").addSnapshotListener { documentSnapshot, error in
+//                guard let document = documentSnapshot else {
+//                    print("error getting document on change \(error)")
+//                    return
+//                }
+//                guard let data = document.data() else {
+//                    print("document data is empty")
+//                    print("document data \(document.data())")
+//                    print("called")
+//                    return
+//                }
+//                print("current data: \(data)")
+//                print("hiiiii you listened!")
+//        }
+//
+//        channelname = ["channelname": "This is the channel name1!", "uid": 2] as [String : Any]
+//        docRef.setData(channelname)
+//
+//        channelname = ["channelname": "This is the channel name2!", "uid": 3] as [String : Any]
+//        docRef.setData(channelname)
+//        
+
+//        docRef = Firestore.firestore().document("User/\(Auth.auth().currentUser?.uid)").collection("Channel").document("ChannelName")
+//        var channelname = ["channelname": "This is the channel name!", "uid": 1] as [String : Any]
+//        docRef.setData(channelname)
+        
         
         
         db.collection("User").getDocuments { (querySnapshot, error) in
@@ -62,9 +108,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         //userTest.text = Auth.auth().currentUser?.email
-        docRef = Firestore.firestore().document("User/NewDoc")
-//        var username = ["username": "MYYYY EYEEES", "uid": "hsdfisdf"]
-//        docRef.setData(username)
+
 //
 //        docRef.getDocument { (DocumentSnapshot, Error) in
 //            let myData = DocumentSnapshot?.data()
