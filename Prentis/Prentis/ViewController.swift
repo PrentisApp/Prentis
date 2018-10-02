@@ -37,7 +37,7 @@ class ViewController: UIViewController, AgoraRtcEngineDelegate {
     
     func setupLocalVideo() {
         let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = 5
+        videoCanvas.uid = 6
         print("local uid: \(videoCanvas.uid)")
         videoCanvas.view = localVideo
         videoCanvas.renderMode = .hidden
@@ -46,7 +46,7 @@ class ViewController: UIViewController, AgoraRtcEngineDelegate {
     
     func setupRemoteVideo() {
         let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = 6
+        videoCanvas.uid = 5
         print("remote uid: \(videoCanvas.uid)")
 
         videoCanvas.view = remoteVideo
@@ -55,7 +55,7 @@ class ViewController: UIViewController, AgoraRtcEngineDelegate {
     }
     
     func joinChannel() {
-        agoraKit?.joinChannel(byToken: nil, channelId: "demoChannel1", info:nil, uid:5){[weak self] (sid, uid, elapsed) -> Void in
+        agoraKit?.joinChannel(byToken: nil, channelId: "demoChannel1", info:nil, uid:6){[weak self] (sid, uid, elapsed) -> Void in
 
             // Join channel "demoChannel1"
             

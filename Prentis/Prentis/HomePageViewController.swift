@@ -9,14 +9,72 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
 
-class HomePageViewController: UIViewController {
+class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var userTest: UILabel!
+    @IBOutlet weak var userTable: UITableView!
+    
+    var docRef: DocumentReference!
+    var db = Firestore.firestore()
+    var documents = [] as [[String: Any]]
+    
+    func numberOfSections(in userTable: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ userTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.documents.count
+    }
+    
+    func tableView(_ userTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = userTable.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserCell
+        let document = self.documents[indexPath.row]
+        cell.usernameLabel.text = (document["username"] as! String)
+        cell.bioLabel.text = (document["bio"] as! String)
+        
+        return cell
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userTest.text = Auth.auth().currentUser?.email
+        
+        
+        db.collection("User").getDocuments { (querySnapshot, error) in
+            if let error = error {
+                print("Hey you got an error querying all the users \(error)")
+            } else {
+                //self.documents = []
+                for document in querySnapshot!.documents {
+                    self.documents.append(document.data() as [String: Any])
+                    //print("document name is \(document.data()["username"])")
+                    //print("document uid is \(document.data()["uid"])")
+                }
+                self.userTable.reloadData()
+            }
+        }
+        
+        
+        userTable.dataSource = self
+        userTable.delegate = self
+        
+        
+        
+        //userTest.text = Auth.auth().currentUser?.email
+        docRef = Firestore.firestore().document("User/NewDoc")
+//        var username = ["username": "MYYYY EYEEES", "uid": "hsdfisdf"]
+//        docRef.setData(username)
+//
+//        docRef.getDocument { (DocumentSnapshot, Error) in
+//            let myData = DocumentSnapshot?.data()
+//            let myLeg = myData?["username"]
+//            print(".......\(myLeg!)")
+//        }
+        
+
+        
+        
         // Do any additional setup after loading the view.
     }
     
