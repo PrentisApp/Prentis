@@ -113,36 +113,29 @@
                                             <segue destination="Fsj-aS-p9p" kind="show" id="J1q-NY-9Tt"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmb-jt-xjM">
-                                        <rect key="frame" x="131" y="162" width="113" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnM-iu-osu">
-                                        <rect key="frame" x="30" y="239" width="314" height="30"/>
+                                        <rect key="frame" x="30" y="256" width="314" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iYv-QU-eLL">
-                                        <rect key="frame" x="30" y="306" width="314" height="30"/>
+                                        <rect key="frame" x="30" y="323" width="314" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JvL-WK-vZX">
-                                        <rect key="frame" x="30" y="373" width="314" height="30"/>
+                                        <rect key="frame" x="30" y="390" width="314" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw6-QW-xUX">
-                                        <rect key="frame" x="30" y="438" width="314" height="47"/>
+                                        <rect key="frame" x="30" y="455" width="314" height="47"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -154,6 +147,21 @@
                                             <action selector="SignUpButton:" destination="YA5-qL-Ukp" eventType="touchUpInside" id="LeI-i8-SeW"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ATN-Le-chB">
+                                        <rect key="frame" x="123" y="92" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="focusOnFaces" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-wu-f1K">
+                                        <rect key="frame" x="123" y="92" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Choose Image"/>
+                                        <connections>
+                                            <action selector="chooseImage:" destination="YA5-qL-Ukp" eventType="touchUpInside" id="wed-Sa-t4K"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.070588235289999995" green="0.53725490200000003" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -162,8 +170,10 @@
                         <viewLayoutGuide key="safeArea" id="vL4-gm-cRd"/>
                     </view>
                     <connections>
+                        <outlet property="chooseImageButton" destination="aFo-wu-f1K" id="Bp7-6k-idr"/>
                         <outlet property="emailField" destination="lnM-iu-osu" id="xMJ-5T-5d6"/>
                         <outlet property="passwordField" destination="iYv-QU-eLL" id="TIF-E6-zhH"/>
+                        <outlet property="profileImage" destination="ATN-Le-chB" id="tNP-WI-98r"/>
                         <outlet property="usernameField" destination="JvL-WK-vZX" id="OxO-GS-WnR"/>
                         <segue destination="MgJ-5x-g6P" kind="presentation" identifier="toHomeFromSignUp" id="edn-iy-b74"/>
                     </connections>
