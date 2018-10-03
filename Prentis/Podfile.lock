@@ -6,6 +6,7 @@ PODS:
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
+  - FaceAware (1.4.0)
   - Firebase/Auth (5.7.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.3)
@@ -108,7 +109,7 @@ PODS:
     - gRPC-Core (= 1.14.1)
     - gRPC-RxLibrary (= 1.14.1)
   - GTMSessionFetcher/Core (1.2.0)
-  - Hero (1.3.0)
+  - Hero (1.3.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -119,6 +120,7 @@ PODS:
 
 DEPENDENCIES:
   - AgoraRtcEngine_iOS
+  - FaceAware
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -130,6 +132,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AgoraRtcEngine_iOS
     - BoringSSL
+    - FaceAware
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -154,6 +157,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AgoraRtcEngine_iOS: 8cdfb59835dee475ddbaa0b24e407818cc0768c4
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
+  FaceAware: 94410295a219c4a397ce525eab0063d6b17258aa
   Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
   FirebaseAnalytics: 993577e91157feb40945abedd6ab346d8a4b6ac8
   FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
@@ -170,7 +174,7 @@ SPEC CHECKSUMS:
   gRPC-ProtoRPC: 78f976fc6a1eafc0e1f4965c255c313aa0859b1e
   gRPC-RxLibrary: c4c826507ad3c8c8fab6887f153938eb04b86d59
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
-  Hero: 3eecd3fd62dd2425cbc7e35505c557b86d5a379e
+  Hero: 1c3c625ba05856f305d29f5c270f8766c5ff2df7
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5

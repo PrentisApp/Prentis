@@ -23,4 +23,6 @@ target 'Prentis' do
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'FaceAware'
+
 end
