@@ -11,7 +11,7 @@ import UIKit
 class UserCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var bioLabel: UILabel!
+    //@IBOutlet weak var bioLabel: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!
     override func awakeFromNib() {

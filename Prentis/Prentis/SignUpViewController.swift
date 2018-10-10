@@ -81,8 +81,21 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //let image = UIImage(contentsOfFile: self.URL.absoluteString!)
         
-        profileImage.image = image
+        let size = image.size.applying(CGAffineTransform(scaleX: 0.2, y: 0.2))
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        image.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        
+        //profileImage.image = image
+        profileImage.image = scaledImage
         profileImage.contentMode = UIViewContentMode.scaleAspectFill
         profileImage.clipsToBounds = true
         profileImage.focusOnFaces = true
@@ -94,6 +107,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func SignUpButton(_ sender: Any) {
+        
         guard let image = UIImageJPEGRepresentation(profileImage.image!, 0.7) else {return}
         guard let email = emailField.text else { print("Nope"); return }
         guard let password = passwordField.text else { print("Nope"); return }
