@@ -135,6 +135,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let signInPage = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         self.present(signInPage, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func toUser(_ sender: Any) {
+        self.performSegue(withIdentifier: "toUserSegue", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
