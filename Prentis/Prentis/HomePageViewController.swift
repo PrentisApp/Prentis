@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import FaceAware
 
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -33,19 +34,21 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = userTable.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserCell
         let document = self.documents[indexPath.row]
         cell.usernameLabel.text = (document["username"] as! String)
-        cell.bioLabel.text = (document["bio"] as! String)
+        //cell.bioLabel.text = (document["bio"] as! String)
         
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let imageRef = storageRef.child("ProfileImages/9Eif7xFDcRVTgbLfli6g5mrf4Dq1.jpg")
+        let imageRef = storageRef.child(document["profileImage"] as! String)
         
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
-            // Uh-oh, an error occurred!
+                print("error: \(error)")
             } else {
-            // Data for "images/island.jpg" is returned
-            let image = UIImage(data: data!)
-            cell.profileImage.image = image
+                let image = UIImage(data: data!)
+                cell.profileImage.image = image
+                cell.profileImage.contentMode = UIViewContentMode.scaleAspectFill
+                cell.profileImage.clipsToBounds = true
+                cell.profileImage.focusOnFaces = true
             }
         }
             

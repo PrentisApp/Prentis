@@ -31,41 +31,38 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="120" id="hlW-ki-Bpx" customClass="UserCell" customModule="Prentis" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="121" id="hlW-ki-Bpx" customClass="UserCell" customModule="Prentis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlW-ki-Bpx" id="5bB-S0-K3h">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Spongebob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW2-Xk-2Ce" userLabel="username">
-                                                    <rect key="frame" x="125" y="21" width="89" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spongebob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW2-Xk-2Ce" userLabel="username">
+                                                    <rect key="frame" x="115" y="21" width="89" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VoV-AR-gcL">
-                                                    <rect key="frame" x="15" y="21" width="89" height="69"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VoV-AR-gcL">
+                                                    <rect key="frame" x="25" y="21" width="69" height="69"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="69" id="U7Q-JT-9kx"/>
+                                                        <constraint firstAttribute="width" constant="69" id="v2h-FX-2FL"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bio: Hi I am a text view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6E-tw-u5J" userLabel="bio">
-                                                    <rect key="frame" x="109" y="50" width="188" height="53"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="x6E-tw-u5J" firstAttribute="top" secondItem="VW2-Xk-2Ce" secondAttribute="bottom" constant="8" id="2JR-hy-hnH"/>
-                                                <constraint firstItem="VoV-AR-gcL" firstAttribute="leading" secondItem="5bB-S0-K3h" secondAttribute="leading" constant="15" id="CUq-3o-ap4"/>
                                                 <constraint firstItem="VW2-Xk-2Ce" firstAttribute="leading" secondItem="VoV-AR-gcL" secondAttribute="trailing" constant="21" id="I42-cu-qm5"/>
                                                 <constraint firstItem="VW2-Xk-2Ce" firstAttribute="top" secondItem="5bB-S0-K3h" secondAttribute="top" constant="21" id="JdA-kI-Cz3"/>
-                                                <constraint firstItem="x6E-tw-u5J" firstAttribute="leading" secondItem="VoV-AR-gcL" secondAttribute="trailing" constant="21" id="PKQ-Ic-tRN"/>
-                                                <constraint firstAttribute="bottom" secondItem="x6E-tw-u5J" secondAttribute="bottom" constant="16.5" id="WEU-5a-cnN"/>
-                                                <constraint firstItem="VoV-AR-gcL" firstAttribute="top" secondItem="5bB-S0-K3h" secondAttribute="top" constant="21" id="zB5-rg-L6V"/>
+                                                <constraint firstItem="VoV-AR-gcL" firstAttribute="leading" secondItem="5bB-S0-K3h" secondAttribute="leadingMargin" constant="10" id="T4W-RQ-OBH"/>
+                                                <constraint firstItem="VoV-AR-gcL" firstAttribute="top" secondItem="5bB-S0-K3h" secondAttribute="topMargin" constant="10" id="WvN-2s-kDp"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="VoV-AR-gcL" secondAttribute="bottom" constant="20" id="amv-4b-JFQ"/>
+                                                <constraint firstItem="VoV-AR-gcL" firstAttribute="leading" secondItem="5bB-S0-K3h" secondAttribute="leadingMargin" constant="10" id="qc7-fX-ffq"/>
+                                                <constraint firstItem="VoV-AR-gcL" firstAttribute="top" secondItem="5bB-S0-K3h" secondAttribute="topMargin" constant="10" id="zh3-11-tnH"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bioLabel" destination="x6E-tw-u5J" id="7C0-mc-IlA"/>
                                             <outlet property="profileImage" destination="VoV-AR-gcL" id="63H-Bq-BfZ"/>
                                             <outlet property="usernameLabel" destination="VW2-Xk-2Ce" id="5us-Ra-hHu"/>
                                         </connections>
