@@ -141,7 +141,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     @IBAction func toUser(_ sender: Any) {
-        self.performSegue(withIdentifier: "toUserSegue", sender: nil)
+        let yourArticleViewController = UIStoryboard(name: "UserProfile", bundle: nil).instantiateViewController(withIdentifier: "UserProfileViewController") as! UserProfileViewController
+        self.navigationController?.pushViewController(yourArticleViewController, animated: true)
     }
     /*
     // MARK: - Navigation
