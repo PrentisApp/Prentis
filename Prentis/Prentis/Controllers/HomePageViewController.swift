@@ -34,7 +34,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = userTable.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserCell
         let document = self.documents[indexPath.row]
         cell.usernameLabel.text = (document["username"] as! String)
-        //cell.bioLabel.text = (document["bio"] as! String)
+        cell.bioLabel.text = (document["bio"] as! String)
         
         let storage = Storage.storage()
         let storageRef = storage.reference()
