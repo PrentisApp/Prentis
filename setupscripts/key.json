@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "prentisapp-50e4e",
+  "private_key_id": "c099f29932b0a839892d8f676c008cfa5e4e2105",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCXkyY1nxEGPXg8\nc7INByaEOyO51OkSdU715wMAEMPyb7BkCDn0GUEQl6dY2JWdVpssl8QiF2uDyGVh\nCeKdGjKv76pvJbYsQDT9Fqeo8Jfst+g1aZMfHngbgrCb+/fMCoq3OT+r7Zzzz45y\nArJNnfsp7VB5+pnfJZwYviKy3JKjMK2nKU0fJTWEjX75UF3gxpoVQ3wHEBrTBeNb\nQynWrv1jBHlIu70AcM4FFDiLk9ODHAcN8dw27enjKS8v17qS9kUvjS8ub2WELUzI\npSivF5IGMJlMr2NO9GRQUK1odvkxXVSTAod/zMIm5qOB4v10S9kxSIY+P6ozZWyn\nJeBCQpzrAgMBAAECggEAGrr3Co7GPFD70sFefYCs0LXzO3LqNXidl60JMOpD/A2p\nUELJIZyQhmIQP5FWdTxQOkF7c72olsFw63eIUMdNeAxuhJJkeZJLJfToVVk0majn\nGQBI0zyW1tcp2SBK119mjiBY87OAMdkBGGcUVa7OG9s/jXtdxmYGDLD/Qoa2j3Oh\nI+1mo75N8s3nzp7vV1RS94kMbpXygSK9pFcHlDekTNVLIUWA/e5VoJHGmltJWAVI\nrJa5JmPEE7AGFlOXqg9qmN8eVq4VIXzgvebOU13Jo+bnyABwCfeibvdHCvxLt9jA\nSEZ0SG+h1jThrC+u4xxjggKlaP9mK+WYC4GAAzIENQKBgQDPAPJ8k9nNQxEAogod\ngD91XcyU8u5beYwGCC4MQQlH7wrXdPLSVsZa2Lh9vUz3bf7b7pf9FdGeNpfedcSU\nsj6kelQVtVDHblZ/9gP44/wrkBH/nVYWQK00a7FOa/jvXRhOJPpVa0LjncL8AnKn\n/U8pkE144be7QBSeob5e1+jE7wKBgQC7c5P5/q/U5lSqRmyEQuYBfXEfSBZtP44S\nBJQjILCViQbYcrKpOL+Ubw3yHJdLHT1+AtLwWTrO4aBCtYqGtvk+dzstTUweOOFf\nJr5gIdgp1RN6FwGsmjf7tITVwq8hLu5FdRe4uN9GKymdh1xUpllWXbfqvNU2H5DR\n5SnwWZf/xQKBgQCKF8+sW9XIoR0Olwq4c33iBhkcpJNuYr+OppZRhnFyk31gDpyO\nxWS95iXtfAOEbNTAU4MBSzTznufheB8UM3SmtRSzBqpE4M7DvpMXzr/DL/FR3Nw5\nLBxgBBfcgRsoU6qLNw/pPAz7W5tgEyH5/3p399Q2+B1hxXX7/VrKWq7l8QKBgHWj\nhiVpEZ4R4uZtheLHPSOIPvr7uZ9cOGPUXcdh15Awy4wBB2CtzYVw4JamHMi2FAZF\n7W2LAh4deP8EgWgj4m2yVAANN4zr83xMi0M3Wjp+j1eaoqFYs3OSiZ7BLDkuA7ix\nUG7MDssxgU9sSKSTNRO/gxGc6k2qJ6+iGtzMzVhlAoGBAJe2QEZyujff09KsPP7F\nhKlcCxnPZAIZNREMJlcQ/Vndkf07ActShzVxgQK5n7TleKGGXDlkQLG95ZehuRkv\nTJH99c26vUTDwohwaZtE1vz8SbOelo3kMhWPn1J0Wl9S0STQKINiZFfjjeskcoDG\nKe70HzF6nGrWHnzh2HHqAV79\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-vvo4f@prentisapp-50e4e.iam.gserviceaccount.com",
+  "client_id": "110955633320396635832",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-vvo4f%40prentisapp-50e4e.iam.gserviceaccount.com"
+}
