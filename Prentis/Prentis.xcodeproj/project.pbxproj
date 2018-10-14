@@ -120,6 +120,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1F0397A52173A97700FD7BCF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1FC30C5C213B36EC00FC68BA /* ViewController.swift */,
+				1F59A7212163BFCF00A5FBC0 /* UserCell.swift */,
+				0A01C83A216E5DE200B55815 /* UserProfileViewController.swift */,
+				0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */,
+				0AE1F96221615CAA00FF0FA6 /* LoginViewController.swift */,
+				0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1F0397A62173ABA000FD7BCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AE1F9662161705500FF0FA6 /* HomePage.storyboard */,
+				0A01C838216E5DBB00B55815 /* UserProfile.storyboard */,
+				1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */,
+				0AE1F95A21614BEF00FF0FA6 /* Start.storyboard */,
+				1FC30C5E213B36EC00FC68BA /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1F0397A72173ABFE00FD7BCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1FC30C4E213B36EB00FC68BA = {
 			isa = PBXGroup;
 			children = (
@@ -145,21 +177,13 @@
 		1FC30C59213B36EC00FC68BA /* Prentis */ = {
 			isa = PBXGroup;
 			children = (
+				1F0397A72173ABFE00FD7BCF /* Models */,
+				1F0397A62173ABA000FD7BCF /* Views */,
+				1F0397A52173A97700FD7BCF /* Controllers */,
 				0A49B29A2148302900A6D2F8 /* GoogleService-Info.plist */,
 				1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */,
-				1FC30C5C213B36EC00FC68BA /* ViewController.swift */,
-				1FC30C5E213B36EC00FC68BA /* Main.storyboard */,
 				1FC30C61213B36F000FC68BA /* Assets.xcassets */,
-				1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */,
 				1FC30C66213B36F000FC68BA /* Info.plist */,
-				0AE1F95A21614BEF00FF0FA6 /* Start.storyboard */,
-				0AE1F9662161705500FF0FA6 /* HomePage.storyboard */,
-				0A01C838216E5DBB00B55815 /* UserProfile.storyboard */,
-				0A01C83A216E5DE200B55815 /* UserProfileViewController.swift */,
-				0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */,
-				0AE1F96221615CAA00FF0FA6 /* LoginViewController.swift */,
-				0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */,
-				1F59A7212163BFCF00A5FBC0 /* UserCell.swift */,
 			);
 			path = Prentis;
 			sourceTree = "<group>";
