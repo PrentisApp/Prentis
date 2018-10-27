@@ -133,7 +133,6 @@ class ViewController: UIViewController, AgoraRtcEngineDelegate {
         }
     }
     
-
     @IBAction func onMute(_ sender: UIButton ) {
         sender.isSelected = !sender.isSelected
         agoraKit?.muteLocalAudioStream(sender.isSelected)
@@ -150,7 +149,6 @@ class ViewController: UIViewController, AgoraRtcEngineDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 
