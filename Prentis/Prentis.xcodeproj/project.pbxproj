@@ -15,6 +15,8 @@
 		0AE1F96521615CD000FF0FA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */; };
 		0AE1F9672161705500FF0FA6 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE1F9662161705500FF0FA6 /* HomePage.storyboard */; };
 		0AE1F9692161712300FF0FA6 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */; };
+		1F0397A92173BAAF00FD7BCF /* ExpertiseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0397A82173BAAF00FD7BCF /* ExpertiseCell.swift */; };
+		1F3CB05D2184F809005698BA /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3CB05C2184F809005698BA /* Mentor.swift */; };
 		1F59A7222163BFCF00A5FBC0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F59A7212163BFCF00A5FBC0 /* UserCell.swift */; };
 		1FC30C5B213B36EC00FC68BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */; };
 		1FC30C5D213B36EC00FC68BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C5C213B36EC00FC68BA /* ViewController.swift */; };
@@ -56,6 +58,8 @@
 		0AE1F9662161705500FF0FA6 /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
 		0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		1A801ABE0C1D2E5CB75CAA19 /* Pods-PrentisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisUITests/Pods-PrentisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1F0397A82173BAAF00FD7BCF /* ExpertiseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertiseCell.swift; sourceTree = "<group>"; };
+		1F3CB05C2184F809005698BA /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
 		1F59A7212163BFCF00A5FBC0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		1FC30C57213B36EC00FC68BA /* Prentis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prentis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */,
 				0AE1F96221615CAA00FF0FA6 /* LoginViewController.swift */,
 				0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */,
+				1F0397A82173BAAF00FD7BCF /* ExpertiseCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 		1F0397A72173ABFE00FD7BCF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1F3CB05C2184F809005698BA /* Mentor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -458,7 +464,9 @@
 				1F59A7222163BFCF00A5FBC0 /* UserCell.swift in Sources */,
 				0AE1F96521615CD000FF0FA6 /* SignUpViewController.swift in Sources */,
 				0AE1F9692161712300FF0FA6 /* HomePageViewController.swift in Sources */,
+				1F3CB05D2184F809005698BA /* Mentor.swift in Sources */,
 				1FC30C5B213B36EC00FC68BA /* AppDelegate.swift in Sources */,
+				1F0397A92173BAAF00FD7BCF /* ExpertiseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
