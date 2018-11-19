@@ -10,6 +10,75 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Receive Call Controller-->
+        <scene sceneID="Wkf-WN-0fe">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="4Zh-uy-pel" customClass="ReceiveCallController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nok-cc-YIx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-VW-LHT">
+                                <rect key="frame" x="43" y="174" width="289" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvi-pB-XzM">
+                                        <rect key="frame" x="105" y="8" width="79" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mentee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW0-BV-VVr">
+                                        <rect key="frame" x="115" y="90" width="58" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I want to know how to grill Krabby Patties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDB-c2-zPG">
+                                        <rect key="frame" x="0.0" y="127" width="281" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-k1-nBP">
+                                        <rect key="frame" x="192" y="156" width="49" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Accept"/>
+                                        <connections>
+                                            <action selector="onAccept:" destination="4Zh-uy-pel" eventType="touchUpInside" id="wvY-Lz-wUz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tol-xy-pUX">
+                                        <rect key="frame" x="24" y="156" width="52" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Decline"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.21443111795774647" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vsA-S7-5I4"/>
+                    </view>
+                    <connections>
+                        <outlet property="bioLabel" destination="hDB-c2-zPG" id="4Ty-An-mhO"/>
+                        <outlet property="profileImage" destination="pvi-pB-XzM" id="x93-zn-4rn"/>
+                        <outlet property="usernameLabel" destination="bW0-BV-VVr" id="KAD-2b-Nw9"/>
+                        <segue destination="whi-Xn-6Vp" kind="presentation" identifier="onCallSegue" id="RS0-u1-L3Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="87f-eB-o3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2417" y="-677"/>
+        </scene>
+        <!--CallController-->
+        <scene sceneID="jRN-zp-eVF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="CallController" storyboardName="Main" referencedIdentifier="CallController" id="whi-Xn-6Vp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lg-KH-OX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3066" y="-1204"/>
+        </scene>
         <!--UserProfileViewController-->
         <scene sceneID="aPu-CG-R5b">
             <objects>
@@ -159,11 +228,90 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userTable" destination="SBD-ci-rP0" id="3Eh-c9-EDo"/>
+                        <segue destination="rt2-fJ-bek" kind="presentation" identifier="popupSegue" id="o8v-gX-JOE"/>
+                        <segue destination="4Zh-uy-pel" kind="presentation" identifier="receiveSegue" id="FZB-nJ-sU4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GE2-iI-c1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799.2" y="-197.45127436281859"/>
+            <point key="canvasLocation" x="1798" y="-229"/>
+        </scene>
+        <!--Popup View Controller-->
+        <scene sceneID="a0Y-Bi-QbN">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="rt2-fJ-bek" customClass="PopupViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ka9-ge-3ba">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-h5-5Dx">
+                                <rect key="frame" x="58" y="214" width="259" height="188"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spongebob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m8-bM-Zfu" userLabel="usernameLabel">
+                                        <rect key="frame" x="85" y="93" width="89" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtU-qg-WBJ">
+                                        <rect key="frame" x="177" y="150" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Call"/>
+                                        <connections>
+                                            <action selector="call:" destination="rt2-fJ-bek" eventType="touchUpInside" id="Bft-ve-crV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwb-zk-zZA">
+                                        <rect key="frame" x="21" y="150" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="rt2-fJ-bek" eventType="touchUpInside" id="eLF-aq-Dur"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I like grilling Krabby Patties" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-oG-5Ml">
+                                        <rect key="frame" x="21" y="122" width="205" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b78-KA-w4E" userLabel="profileImage">
+                                        <rect key="frame" x="95" y="16" width="69" height="69"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="69" id="D78-SS-2lx"/>
+                                            <constraint firstAttribute="width" constant="69" id="FM4-WJ-NAK"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="b78-KA-w4E" firstAttribute="top" secondItem="hyQ-h5-5Dx" secondAttribute="top" constant="16" id="2B4-kn-ANK"/>
+                                    <constraint firstItem="b78-KA-w4E" firstAttribute="leading" secondItem="hyQ-h5-5Dx" secondAttribute="leading" constant="95" id="PqB-Nb-RMt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.42842209507042256" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="leading" secondItem="j0h-nr-GpV" secondAttribute="leading" constant="58" id="3GY-L6-1Xm"/>
+                            <constraint firstItem="j0h-nr-GpV" firstAttribute="bottom" secondItem="hyQ-h5-5Dx" secondAttribute="bottom" constant="265" id="Xzq-ro-kvQ"/>
+                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="top" secondItem="j0h-nr-GpV" secondAttribute="top" constant="194" id="YFH-3R-xrj"/>
+                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="centerX" secondItem="Ka9-ge-3ba" secondAttribute="centerX" id="deP-l0-ssG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="j0h-nr-GpV"/>
+                    </view>
+                    <connections>
+                        <outlet property="bioLabel" destination="rIf-oG-5Ml" id="ceS-0I-6CQ"/>
+                        <outlet property="profileImage" destination="b78-KA-w4E" id="bwa-YJ-7r0"/>
+                        <outlet property="usernameLabel" destination="2m8-bM-Zfu" id="Dub-gO-ly1"/>
+                        <segue destination="whi-Xn-6Vp" kind="presentation" identifier="onAcceptSegue" id="azq-T1-0cW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VOh-1d-Fm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3241" y="-315"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="K1A-6h-RbP">
@@ -184,4 +332,7 @@
             <point key="canvasLocation" x="860" y="-197.45127436281859"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="azq-T1-0cW"/>
+    </inferredMetricsTieBreakers>
 </document>
