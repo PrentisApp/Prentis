@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		0A01C839216E5DBB00B55815 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A01C838216E5DBB00B55815 /* UserProfile.storyboard */; };
 		0A01C83B216E5DE200B55815 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A01C83A216E5DE200B55815 /* UserProfileViewController.swift */; };
+		0A21D0C921A2404100B871FF /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A21D0C821A2404100B871FF /* TopicCell.swift */; };
 		0A49B29B2148302900A6D2F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A49B29A2148302900A6D2F8 /* GoogleService-Info.plist */; };
+		0ACC9911218E3FF200ACCF87 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC9910218E3FF200ACCF87 /* ProfileViewController.swift */; };
+		0ACC9913218E488F00ACCF87 /* IntExpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACC9912218E488F00ACCF87 /* IntExpViewController.swift */; };
 		0AE1F95B21614BEF00FF0FA6 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AE1F95A21614BEF00FF0FA6 /* Start.storyboard */; };
 		0AE1F96321615CAA00FF0FA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1F96221615CAA00FF0FA6 /* LoginViewController.swift */; };
 		0AE1F96521615CD000FF0FA6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */; };
@@ -51,7 +54,10 @@
 		055856C4337BD5DFA99F0EDC /* Pods_Prentis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prentis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A01C838216E5DBB00B55815 /* UserProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		0A01C83A216E5DE200B55815 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		0A21D0C821A2404100B871FF /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		0A49B29A2148302900A6D2F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0ACC9910218E3FF200ACCF87 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0ACC9912218E488F00ACCF87 /* IntExpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExpViewController.swift; sourceTree = "<group>"; };
 		0AE1F95A21614BEF00FF0FA6 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		0AE1F96221615CAA00FF0FA6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -127,10 +133,13 @@
 		1F0397A52173A97700FD7BCF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0ACC9912218E488F00ACCF87 /* IntExpViewController.swift */,
+				0ACC9910218E3FF200ACCF87 /* ProfileViewController.swift */,
 				1FC30C5C213B36EC00FC68BA /* ViewController.swift */,
 				1F59A7212163BFCF00A5FBC0 /* UserCell.swift */,
 				0A01C83A216E5DE200B55815 /* UserProfileViewController.swift */,
 				0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */,
+				0A21D0C821A2404100B871FF /* TopicCell.swift */,
 				0AE1F96221615CAA00FF0FA6 /* LoginViewController.swift */,
 				0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */,
 				1F0397A82173BAAF00FD7BCF /* ExpertiseCell.swift */,
@@ -141,8 +150,8 @@
 		1F0397A62173ABA000FD7BCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0AE1F9662161705500FF0FA6 /* HomePage.storyboard */,
 				0A01C838216E5DBB00B55815 /* UserProfile.storyboard */,
+				0AE1F9662161705500FF0FA6 /* HomePage.storyboard */,
 				1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */,
 				0AE1F95A21614BEF00FF0FA6 /* Start.storyboard */,
 				1FC30C5E213B36EC00FC68BA /* Main.storyboard */,
@@ -459,8 +468,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AE1F96321615CAA00FF0FA6 /* LoginViewController.swift in Sources */,
+				0ACC9913218E488F00ACCF87 /* IntExpViewController.swift in Sources */,
 				1FC30C5D213B36EC00FC68BA /* ViewController.swift in Sources */,
+				0ACC9911218E3FF200ACCF87 /* ProfileViewController.swift in Sources */,
 				0A01C83B216E5DE200B55815 /* UserProfileViewController.swift in Sources */,
+				0A21D0C921A2404100B871FF /* TopicCell.swift in Sources */,
 				1F59A7222163BFCF00A5FBC0 /* UserCell.swift in Sources */,
 				0AE1F96521615CD000FF0FA6 /* SignUpViewController.swift in Sources */,
 				0AE1F9692161712300FF0FA6 /* HomePageViewController.swift in Sources */,
@@ -641,7 +653,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5HR7QQ25H6;
+				DEVELOPMENT_TEAM = WVUW59QX7W;
 				INFOPLIST_FILE = Prentis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -660,7 +672,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5HR7QQ25H6;
+				DEVELOPMENT_TEAM = WVUW59QX7W;
 				INFOPLIST_FILE = Prentis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
