@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="-566" y="720"/>
         </scene>
-        <!--Int Exp View Controller-->
+        <!--interests-->
         <scene sceneID="PjI-h9-ifb">
             <objects>
-                <viewController id="VJS-97-VrF" customClass="IntExpViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="interests" id="VJS-97-VrF" customClass="IntExpViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwb-mh-aOy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,19 +143,31 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="something by default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFe-xD-YSp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="something by default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFe-xD-YSp">
                                                     <rect key="frame" x="31" y="33" width="209" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                     <nil key="textColor"/>
                                                     <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbr-ML-luP">
+                                                    <rect key="frame" x="294" y="33" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="checkTopic:" destination="Xrj-Vu-PVz" eventType="valueChanged" id="X4g-sB-2LA"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="lbr-ML-luP" firstAttribute="leading" secondItem="kFe-xD-YSp" secondAttribute="trailing" constant="54" id="0Fz-z8-PFp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="lbr-ML-luP" secondAttribute="trailing" constant="17" id="3r1-eI-kDD"/>
                                                 <constraint firstItem="kFe-xD-YSp" firstAttribute="top" secondItem="SSh-rR-wvW" secondAttribute="topMargin" constant="22" id="9Dg-OF-qWi"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="kFe-xD-YSp" secondAttribute="bottom" constant="15" id="All-7g-LP9"/>
+                                                <constraint firstItem="lbr-ML-luP" firstAttribute="top" secondItem="SSh-rR-wvW" secondAttribute="topMargin" constant="22" id="Jk1-Bu-izK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="lbr-ML-luP" secondAttribute="bottom" constant="12" id="U0T-Sa-Zdi"/>
+                                                <constraint firstItem="kFe-xD-YSp" firstAttribute="leading" secondItem="SSh-rR-wvW" secondAttribute="leadingMargin" constant="16" id="Uue-8I-Jcy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="topicInUse" destination="lbr-ML-luP" id="Fb5-ho-89d"/>
                                             <outlet property="topicLabel" destination="kFe-xD-YSp" id="lop-e0-DLo"/>
                                         </connections>
                                     </tableViewCell>
@@ -173,16 +185,63 @@
             </objects>
             <point key="canvasLocation" x="44" y="719.64017991004505"/>
         </scene>
-        <!--View Controller-->
+        <!--expertise-->
         <scene sceneID="qJG-yM-0rh">
             <objects>
-                <viewController id="Qey-qx-yMs" sceneMemberID="viewController">
+                <viewController title="expertise" id="Qey-qx-yMs" customClass="ExpertiseViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EkJ-Gi-a1p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z2b-lX-n1Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicTableViewCell" rowHeight="87" id="Lg2-Uj-l9P" customClass="TopicCell" customModule="Prentis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lg2-Uj-l9P" id="BQ9-Lt-ttP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="something by default" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rso-IF-whL">
+                                                    <rect key="frame" x="31" y="33" width="209" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5p-r1-LdF">
+                                                    <rect key="frame" x="294" y="33" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="checkTopic:" destination="Lg2-Uj-l9P" eventType="valueChanged" id="kA1-5F-J6a"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="z5p-r1-LdF" firstAttribute="top" secondItem="BQ9-Lt-ttP" secondAttribute="topMargin" constant="22" id="Ta9-K6-Iy2"/>
+                                                <constraint firstItem="rso-IF-whL" firstAttribute="leading" secondItem="BQ9-Lt-ttP" secondAttribute="leadingMargin" constant="16" id="k3h-6s-sOc"/>
+                                                <constraint firstItem="z5p-r1-LdF" firstAttribute="leading" secondItem="rso-IF-whL" secondAttribute="trailing" constant="54" id="ly1-zl-scB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rso-IF-whL" secondAttribute="bottom" constant="15" id="t3g-V7-oFQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="z5p-r1-LdF" secondAttribute="trailing" constant="17" id="vId-6Q-3S7"/>
+                                                <constraint firstItem="rso-IF-whL" firstAttribute="top" secondItem="BQ9-Lt-ttP" secondAttribute="topMargin" constant="22" id="z3C-Mx-faU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="z5p-r1-LdF" secondAttribute="bottom" constant="12" id="zbs-pt-mVL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="topicInUse" destination="z5p-r1-LdF" id="mQQ-6D-Ico"/>
+                                            <outlet property="topicLabel" destination="rso-IF-whL" id="XLP-ay-GAo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.070588235289999995" green="0.53725490200000003" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="qTE-jl-alh"/>
                     </view>
+                    <connections>
+                        <outlet property="expTable" destination="z2b-lX-n1Z" id="Zvd-hG-uBt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVe-xZ-Ja5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -30,7 +30,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let defaults = UserDefaults.standard
-                let defaultsTwo = UserDefaults.standard
                 defaults.set(document["interests"] as! [String], forKey: "interestsArray")
                 defaults.set(document["expertise"] as! [String], forKey: "expertiseArray")
                 

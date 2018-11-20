@@ -12,9 +12,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 
-class IntExpViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var intExpTable: UITableView!
-    
+class ExpertiseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var expTable: UITableView!
     
     func numberOfSections(in intExpTable: UITableView) -> Int {
@@ -33,7 +31,7 @@ class IntExpViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("\(x) , \(m)")
         cell.topicInUse.setOn(m as! Bool, animated: false)
         cell.topicLabel.text = x
-        cell.tableView = "interests"
+        cell.tableView = "expertise"
         cell.buttonAction = {sender in
             print("hey")
             self.objectsArray[indexPath.section].categoryObjects[x] = !m
@@ -49,79 +47,79 @@ class IntExpViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var categoryName : String!
         var categoryObjects : [String:Bool]!
     }
-     var objectsArray = [Objects]()
+    var objectsArray = [Objects]()
     
     var docRef: DocumentReference!
     var db = Firestore.firestore()
     var documents = [] as [[String: Any]]
-    var interests = [] as [String]
-
+    var expertise = [] as [String]
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        intExpTable.dataSource = self
-        intExpTable.delegate = self
+        expTable.dataSource = self
+        expTable.delegate = self
         
         let defaults = UserDefaults.standard
-        self.interests = defaults.stringArray(forKey: "interestsArray") ?? [String]()
-        print(self.interests)
+        self.expertise = defaults.stringArray(forKey: "expertiseArray") ?? [String]()
+        print(self.expertise)
         
         db.collection("Interexpertestis").order(by: "Category").getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Hey you got an error querying all the users \(error)")
             } else {
                 var currentCategory = ""
-                var allInterests = [:] as [String:Bool]
+                var allexpertise = [:] as [String:Bool]
                 for document in querySnapshot!.documents {
                     print("\(document.data()["Category"] as! String) , \(document.documentID)")
                     if (currentCategory == ""){
                         currentCategory = document.data()["Category"] as! String
-                        if (self.interests.contains(document.documentID.lowercased())){
-                            allInterests[document.documentID] = true
+                        if (self.expertise.contains(document.documentID.lowercased())){
+                            allexpertise[document.documentID] = true
                         }
                         else{
-                            allInterests[document.documentID] = false
+                            allexpertise[document.documentID] = false
                         }
                     }
                     else {
                         if (document.data()["Category"] as! String == currentCategory){
-                            if (self.interests.contains(document.documentID.lowercased())){
-                                allInterests[document.documentID] = true
+                            if (self.expertise.contains(document.documentID.lowercased())){
+                                allexpertise[document.documentID] = true
                             }
                             else{
-                                allInterests[document.documentID] = false
+                                allexpertise[document.documentID] = false
                             }
                         }
                         else {
-                            self.objectsArray.append(Objects(categoryName: currentCategory, categoryObjects: allInterests))
+                            self.objectsArray.append(Objects(categoryName: currentCategory, categoryObjects: allexpertise))
                             currentCategory = document.data()["Category"] as! String
-                            allInterests = [:]
-                            if (self.interests.contains(document.documentID.lowercased())){
-                                allInterests[document.documentID] = true
+                            allexpertise = [:]
+                            if (self.expertise.contains(document.documentID.lowercased())){
+                                allexpertise[document.documentID] = true
                             }
                             else{
-                                allInterests[document.documentID] = false
+                                allexpertise[document.documentID] = false
                             }
                         }
                     }
                 }
-                self.objectsArray.append(Objects(categoryName: currentCategory, categoryObjects: allInterests))
+                self.objectsArray.append(Objects(categoryName: currentCategory, categoryObjects: allexpertise))
                 print(self.objectsArray)
-                self.intExpTable.reloadData()
+                self.expTable.reloadData()
             }
         }
         // Do any additional setup after loading the view.
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
