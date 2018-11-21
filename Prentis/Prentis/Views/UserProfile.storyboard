@@ -18,55 +18,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="S3S-6R-wWp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
-                                <segments>
-                                    <segment title="Profile"/>
-                                    <segment title="Interests"/>
-                                    <segment title="Expertise"/>
-                                </segments>
-                                <connections>
-                                    <action selector="chooseView:" destination="s3u-TR-tIu" eventType="valueChanged" id="AEh-aJ-q0U"/>
-                                </connections>
-                            </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGY-Jx-BUc">
-                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="J61-05-6pO" kind="embed" id="2xc-ht-6B9"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33F-LJ-D7Y">
-                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
                                 <color key="tintColor" red="1" green="0.97340331719999995" blue="0.2176952801" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="VJS-97-VrF" kind="embed" id="ux0-Wx-WGt"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRf-xa-HT1">
-                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="119" width="375" height="548"/>
                                 <color key="tintColor" red="0.070588235289999995" green="0.53725490200000003" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Qey-qx-yMs" kind="embed" id="FSu-WO-yfY"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pal-hM-e5G" customClass="MXSegmentedControl" customModule="MXSegmentedControl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Et7-Cw-ljx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rlF-DJ-bPz" firstAttribute="bottom" secondItem="33F-LJ-D7Y" secondAttribute="bottom" id="2B9-yi-2S0"/>
-                            <constraint firstItem="fRf-xa-HT1" firstAttribute="top" secondItem="S3S-6R-wWp" secondAttribute="bottom" constant="1" id="4na-1w-Hgf"/>
+                            <constraint firstItem="PGY-Jx-BUc" firstAttribute="top" secondItem="Pal-hM-e5G" secondAttribute="bottom" id="5np-wO-LUd"/>
                             <constraint firstItem="PGY-Jx-BUc" firstAttribute="leading" secondItem="rlF-DJ-bPz" secondAttribute="leading" id="6U5-Vz-vI7"/>
-                            <constraint firstItem="rlF-DJ-bPz" firstAttribute="trailing" secondItem="S3S-6R-wWp" secondAttribute="trailing" id="7CF-DO-yiF"/>
-                            <constraint firstItem="PGY-Jx-BUc" firstAttribute="top" secondItem="S3S-6R-wWp" secondAttribute="bottom" constant="1" id="8dL-Fp-7Cn"/>
                             <constraint firstItem="rlF-DJ-bPz" firstAttribute="trailing" secondItem="PGY-Jx-BUc" secondAttribute="trailing" id="A8h-nL-ORa"/>
-                            <constraint firstItem="S3S-6R-wWp" firstAttribute="top" secondItem="rlF-DJ-bPz" secondAttribute="top" id="BmN-eW-Xzr"/>
                             <constraint firstItem="rlF-DJ-bPz" firstAttribute="trailing" secondItem="fRf-xa-HT1" secondAttribute="trailing" id="GZS-RU-aBD"/>
-                            <constraint firstItem="33F-LJ-D7Y" firstAttribute="top" secondItem="S3S-6R-wWp" secondAttribute="bottom" constant="1" id="MAr-cn-8uJ"/>
+                            <constraint firstItem="fRf-xa-HT1" firstAttribute="top" secondItem="Pal-hM-e5G" secondAttribute="bottom" id="HK2-kW-Rq8"/>
                             <constraint firstItem="rlF-DJ-bPz" firstAttribute="trailing" secondItem="33F-LJ-D7Y" secondAttribute="trailing" id="MTR-Lb-w2e"/>
                             <constraint firstItem="33F-LJ-D7Y" firstAttribute="leading" secondItem="rlF-DJ-bPz" secondAttribute="leading" id="Ou1-hs-fLq"/>
-                            <constraint firstItem="S3S-6R-wWp" firstAttribute="leading" secondItem="rlF-DJ-bPz" secondAttribute="leading" id="kwG-Jq-Ucf"/>
+                            <constraint firstItem="rlF-DJ-bPz" firstAttribute="trailing" secondItem="Pal-hM-e5G" secondAttribute="trailing" id="TgT-jd-u8t"/>
+                            <constraint firstItem="33F-LJ-D7Y" firstAttribute="top" secondItem="Pal-hM-e5G" secondAttribute="bottom" id="b7D-6w-T8x"/>
+                            <constraint firstItem="Pal-hM-e5G" firstAttribute="trailing" secondItem="rlF-DJ-bPz" secondAttribute="trailing" id="hbP-0r-oTl"/>
                             <constraint firstItem="rlF-DJ-bPz" firstAttribute="bottom" secondItem="PGY-Jx-BUc" secondAttribute="bottom" id="kyz-kn-9Kp"/>
+                            <constraint firstItem="Pal-hM-e5G" firstAttribute="top" secondItem="rlF-DJ-bPz" secondAttribute="top" id="v8p-Q4-nB3"/>
                             <constraint firstItem="fRf-xa-HT1" firstAttribute="leading" secondItem="rlF-DJ-bPz" secondAttribute="leading" id="wx1-RR-V9i"/>
+                            <constraint firstItem="Pal-hM-e5G" firstAttribute="leading" secondItem="rlF-DJ-bPz" secondAttribute="leading" id="xdo-5I-dDs"/>
                             <constraint firstItem="rlF-DJ-bPz" firstAttribute="bottom" secondItem="fRf-xa-HT1" secondAttribute="bottom" id="yau-wR-oXv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rlF-DJ-bPz"/>
@@ -76,19 +73,19 @@
                         <outlet property="expertiseView" destination="fRf-xa-HT1" id="r8p-cc-b9w"/>
                         <outlet property="interestsView" destination="33F-LJ-D7Y" id="vXv-Ba-Zjo"/>
                         <outlet property="profileView" destination="PGY-Jx-BUc" id="sIW-VD-BPe"/>
-                        <outlet property="segmentControl" destination="S3S-6R-wWp" id="0KK-I8-fSp"/>
+                        <outlet property="segmentedControl1" destination="Pal-hM-e5G" id="m8H-aT-jly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2PE-Fj-2Su" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="-7"/>
+            <point key="canvasLocation" x="44" y="-7.6461769115442282"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="HTe-Aa-u1D">
             <objects>
                 <viewController id="J61-05-6pO" customClass="ProfileViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hCb-Ad-KpD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o35-8G-CnC">
@@ -128,11 +125,11 @@
             <objects>
                 <viewController title="interests" id="VJS-97-VrF" customClass="IntExpViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zwb-mh-aOy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DRC-7Y-GU7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -190,11 +187,11 @@
             <objects>
                 <viewController title="expertise" id="Qey-qx-yMs" customClass="ExpertiseViewController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EkJ-Gi-a1p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z2b-lX-n1Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
