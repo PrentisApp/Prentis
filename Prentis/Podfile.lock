@@ -109,6 +109,7 @@ PODS:
   - gRPC-Core/Interface (1.14.0)
   - GTMSessionFetcher/Core (1.2.1)
   - Hero (1.4.0)
+  - IQKeyboardManagerSwift (6.2.0)
   - leveldb-library (1.20)
   - M13Checkbox (3.2.2)
   - MXSegmentedControl (0.1.0)
@@ -128,6 +129,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - Hero
+  - IQKeyboardManagerSwift
   - M13Checkbox
   - MXSegmentedControl
 
@@ -151,6 +153,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - Hero
+    - IQKeyboardManagerSwift
     - leveldb-library
     - M13Checkbox
     - MXSegmentedControl
@@ -176,12 +179,13 @@ SPEC CHECKSUMS:
   gRPC-Core: f4836515817c0eb479aeeb9cc27c91c4ba62a9f6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
   MXSegmentedControl: 47b36aac2fda4d8c9117ab05088937e8c102796f
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: d78ee746efa6d22eecacc329acf39d12ec0e6788
+PODFILE CHECKSUM: 6ffda1070ff1cc664353402355a1b205334e1dc9
 
 COCOAPODS: 1.5.3

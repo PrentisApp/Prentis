@@ -26,5 +26,6 @@ target 'Prentis' do
   pod 'FaceAware'
   pod 'MXSegmentedControl'
   pod 'M13Checkbox'
+  pod 'IQKeyboardManagerSwift'
 
 end

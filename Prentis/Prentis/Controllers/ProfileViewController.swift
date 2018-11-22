@@ -13,15 +13,34 @@ import FirebaseFirestore
 import FirebaseStorage
 import FaceAware
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITextViewDelegate {
     var docRef: DocumentReference!
     var db = Firestore.firestore()
 
+    @IBOutlet weak var signOutButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var userNameText: UITextView!
+    @IBOutlet weak var bioText: UITextView!
     @IBOutlet weak var bioLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        bioText.isScrollEnabled = false
+        userNameText.isScrollEnabled = false
+        userNameText.textContainer.maximumNumberOfLines = 10
+        userNameText.textContainer.lineBreakMode = .byTruncatingTail
+        userNameText.layer.cornerRadius = 4
+        userNameText.layer.borderWidth = 0.5
+        userNameText.layer.borderColor = UIColor.lightGray.cgColor
+        bioText.layer.cornerRadius = 4
+        bioText.layer.borderWidth = 0.5
+        bioText.layer.borderColor = UIColor.lightGray.cgColor
+//
+        signOutButton.layer.cornerRadius = 4
+        signOutButton.layer.borderWidth = 1
+        signOutButton.layer.borderColor = UIColor.lightGray.cgColor
 
         let docRef = db.collection("User").document((Auth.auth().currentUser?.uid)!)
         
@@ -42,8 +61,10 @@ class ProfileViewController: UIViewController {
                         self.profileImage.focusOnFaces = true
                     }
                 }
-                self.usernameLabel.text = document["username"] as? String
-                self.bioLabel.text = document["bio"] as? String
+                self.userNameText.text = document["username"] as? String
+                self.bioText.text = document["bio"] as? String
+                self.emailLabel.text = document["email"] as? String
+
             } else {
                 print("Document does not exist")
             }
@@ -51,7 +72,19 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signOut(_ sender: Any) {
+        do {
+            try! Auth.auth().signOut()
+        }
+        catch let logoutError {
+            print(logoutError)
+        }
+        
+        let storyboard = UIStoryboard(name: "Start", bundle: nil)
+        let signInPage = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.present(signInPage, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

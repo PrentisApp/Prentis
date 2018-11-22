@@ -72,7 +72,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func signOutButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
         do {
             try! Auth.auth().signOut()
         }
