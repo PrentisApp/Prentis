@@ -11,11 +11,14 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import M13Checkbox
 
 class IntExpViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var intExpTable: UITableView!
     
     @IBOutlet weak var expTable: UITableView!
+    
+    var states = [true:"Checked", false:"Unchecked"]
     
     func numberOfSections(in intExpTable: UITableView) -> Int {
         return objectsArray.count
@@ -30,10 +33,11 @@ class IntExpViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = intExpTable.dequeueReusableCell(withIdentifier: "topicTableViewCell") as! TopicCell
         let x = Array(objectsArray[indexPath.section].categoryObjects.keys)[indexPath.row]
         let m = objectsArray[indexPath.section].categoryObjects[x]!
-        print("\(x) , \(m)")
-        cell.topicInUse.setOn(m as! Bool, animated: false)
+//        print("\(x) , \(m)")
         cell.topicLabel.text = x
         cell.tableView = "interests"
+        cell.selectionStyle = .none
+        cell.checkBox?.setCheckState(M13Checkbox.CheckState(rawValue: states[m]!)!, animated: false)
         cell.buttonAction = {sender in
             print("hey")
             self.objectsArray[indexPath.section].categoryObjects[x] = !m

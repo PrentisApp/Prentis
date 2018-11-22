@@ -11,9 +11,12 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import M13Checkbox
 
 class ExpertiseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var expTable: UITableView!
+    
+    var states = [true:"Checked", false:"Unchecked"]
     
     func numberOfSections(in intExpTable: UITableView) -> Int {
         return objectsArray.count
@@ -29,9 +32,10 @@ class ExpertiseViewController: UIViewController, UITableViewDelegate, UITableVie
         let x = Array(objectsArray[indexPath.section].categoryObjects.keys)[indexPath.row]
         let m = objectsArray[indexPath.section].categoryObjects[x]!
         print("\(x) , \(m)")
-        cell.topicInUse.setOn(m as! Bool, animated: false)
         cell.topicLabel.text = x
         cell.tableView = "expertise"
+        cell.selectionStyle = .none
+        cell.checkBox?.setCheckState(M13Checkbox.CheckState(rawValue: states[m]!)!, animated: false)
         cell.buttonAction = {sender in
             print("hey")
             self.objectsArray[indexPath.section].categoryObjects[x] = !m

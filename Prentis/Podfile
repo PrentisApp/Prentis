@@ -25,5 +25,6 @@ target 'Prentis' do
   pod 'Firebase/Storage'
   pod 'FaceAware'
   pod 'MXSegmentedControl'
+  pod 'M13Checkbox'
 
 end

@@ -13,6 +13,22 @@ import FirebaseFirestore
 import FirebaseStorage
 import MXSegmentedControl
 
+extension UIView {
+    
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        
+        DispatchQueue.main.async {
+            let path = UIBezierPath(roundedRect: self.bounds,
+                                    byRoundingCorners: corners,
+                                    cornerRadii: CGSize(width: radius, height: radius))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = self.bounds
+            maskLayer.path = path.cgPath
+            self.layer.mask = maskLayer
+        }
+    }
+}
+
 class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl1: MXSegmentedControl!
@@ -21,6 +37,12 @@ class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var expertiseView: UIView!
 
+    func switched(s: UISwitch){
+        let origin: CGFloat = s.isOn ? view.frame.height : 50
+        UIView.animate(withDuration: 0.35, animations: {
+            self.profileView.frame.origin.y = origin
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +51,14 @@ class UserProfileViewController: UIViewController {
         segmentedControl1.append(title: "Profile")
         segmentedControl1.append(title: "Interests")
         segmentedControl1.append(title: "Expertise")
-        segmentedControl1.indicator.linePosition = .top
+        segmentedControl1.indicator.linePosition = .bottom
+        segmentedControl1.indicator.lineHeight = 3.0
         segmentedControl1.addTarget(self, action: #selector(changeIndex(segmentedControl:)), for: .valueChanged)
+        self.profileView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
+        self.interestsView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
+        self.expertiseView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
+
+        
     }
     
     @objc func changeIndex(segmentedControl: MXSegmentedControl) {

@@ -29,9 +29,9 @@
 		1FC30C65213B36F000FC68BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */; };
 		1FC30C70213B36F000FC68BA /* PrentisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C6F213B36F000FC68BA /* PrentisTests.swift */; };
 		1FC30C7B213B36F100FC68BA /* PrentisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C7A213B36F100FC68BA /* PrentisUITests.swift */; };
-		30C0AE0B450C001CE25C5516 /* Pods_PrentisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65080341F5F8BB2485DD4BF /* Pods_PrentisUITests.framework */; };
-		71F2CC3AEFCDFEEEA98E1CFE /* Pods_Prentis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDB8B1C0DB937BD797866CB /* Pods_Prentis.framework */; };
-		CC3B31C234C57F3A8B21354A /* Pods_PrentisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9450DE549C0922AE7EC62C50 /* Pods_PrentisTests.framework */; };
+		998165FED55D70E6EACABEDC /* Pods_PrentisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977922C26251FB45A497B3B6 /* Pods_PrentisTests.framework */; };
+		C687C69EB38A1E7942917DAD /* Pods_PrentisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DD0C6C8AC5D59EDFF493366 /* Pods_PrentisUITests.framework */; };
+		F5C727D698D14AED98FB88DE /* Pods_Prentis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D6B010DAD190891D2BCAD5 /* Pods_Prentis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +64,7 @@
 		0AE1F96421615CD000FF0FA6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0AE1F9662161705500FF0FA6 /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
 		0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		0BDB8B1C0DB937BD797866CB /* Pods_Prentis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prentis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		10EBFB59D89EB3442B1240CF /* Pods-PrentisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisUITests/Pods-PrentisUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0C020879565666C1D6851DCA /* Pods-Prentis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prentis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prentis/Pods-Prentis.debug.xcconfig"; sourceTree = "<group>"; };
 		1F0397A82173BAAF00FD7BCF /* ExpertiseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpertiseCell.swift; sourceTree = "<group>"; };
 		1F3CB05C2184F809005698BA /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
 		1F59A7212163BFCF00A5FBC0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -82,13 +81,14 @@
 		1FC30C76213B36F100FC68BA /* PrentisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrentisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC30C7A213B36F100FC68BA /* PrentisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrentisUITests.swift; sourceTree = "<group>"; };
 		1FC30C7C213B36F100FC68BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77D9068A03070108F997AA2D /* Pods-PrentisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisUITests/Pods-PrentisUITests.release.xcconfig"; sourceTree = "<group>"; };
-		78F6A688FDA9C348CFE89E2E /* Pods-PrentisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisTests/Pods-PrentisTests.release.xcconfig"; sourceTree = "<group>"; };
-		863602C91088968F78A9D685 /* Pods-Prentis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prentis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prentis/Pods-Prentis.release.xcconfig"; sourceTree = "<group>"; };
-		9450DE549C0922AE7EC62C50 /* Pods_PrentisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrentisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96D81A0C5AD2555B54EDD2A7 /* Pods-Prentis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prentis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Prentis/Pods-Prentis.debug.xcconfig"; sourceTree = "<group>"; };
-		A0DE6598A3005D8FBDD075EE /* Pods-PrentisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisTests/Pods-PrentisTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E65080341F5F8BB2485DD4BF /* Pods_PrentisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrentisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		596265AEB2FAF29C940DD456 /* Pods-Prentis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Prentis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Prentis/Pods-Prentis.release.xcconfig"; sourceTree = "<group>"; };
+		73D6B010DAD190891D2BCAD5 /* Pods_Prentis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Prentis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DD0C6C8AC5D59EDFF493366 /* Pods_PrentisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrentisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F4383E8D95C2CDDDEAF2032 /* Pods-PrentisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisTests/Pods-PrentisTests.release.xcconfig"; sourceTree = "<group>"; };
+		977922C26251FB45A497B3B6 /* Pods_PrentisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrentisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3D40BD60ECE1A04060EC67 /* Pods-PrentisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisUITests/Pods-PrentisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D37CE9872A8E83A2F67F69F9 /* Pods-PrentisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisUITests/Pods-PrentisUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC003E374EE7CA69FF11ACA6 /* Pods-PrentisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrentisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrentisTests/Pods-PrentisTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71F2CC3AEFCDFEEEA98E1CFE /* Pods_Prentis.framework in Frameworks */,
+				F5C727D698D14AED98FB88DE /* Pods_Prentis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC3B31C234C57F3A8B21354A /* Pods_PrentisTests.framework in Frameworks */,
+				998165FED55D70E6EACABEDC /* Pods_PrentisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,23 +112,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30C0AE0B450C001CE25C5516 /* Pods_PrentisUITests.framework in Frameworks */,
+				C687C69EB38A1E7942917DAD /* Pods_PrentisUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06D2B93275BD941675F160E3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0BDB8B1C0DB937BD797866CB /* Pods_Prentis.framework */,
-				9450DE549C0922AE7EC62C50 /* Pods_PrentisTests.framework */,
-				E65080341F5F8BB2485DD4BF /* Pods_PrentisUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1F0397A52173A97700FD7BCF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +164,8 @@
 				1FC30C6E213B36F000FC68BA /* PrentisTests */,
 				1FC30C79213B36F100FC68BA /* PrentisUITests */,
 				1FC30C58213B36EC00FC68BA /* Products */,
-				8C4F3F922B8C2302F5EFFC63 /* Pods */,
-				06D2B93275BD941675F160E3 /* Frameworks */,
+				481ED69FE12C8191EA5FDD39 /* Pods */,
+				BFD708857F242B3C5538D919 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,17 +211,27 @@
 			path = PrentisUITests;
 			sourceTree = "<group>";
 		};
-		8C4F3F922B8C2302F5EFFC63 /* Pods */ = {
+		481ED69FE12C8191EA5FDD39 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				96D81A0C5AD2555B54EDD2A7 /* Pods-Prentis.debug.xcconfig */,
-				863602C91088968F78A9D685 /* Pods-Prentis.release.xcconfig */,
-				A0DE6598A3005D8FBDD075EE /* Pods-PrentisTests.debug.xcconfig */,
-				78F6A688FDA9C348CFE89E2E /* Pods-PrentisTests.release.xcconfig */,
-				10EBFB59D89EB3442B1240CF /* Pods-PrentisUITests.debug.xcconfig */,
-				77D9068A03070108F997AA2D /* Pods-PrentisUITests.release.xcconfig */,
+				0C020879565666C1D6851DCA /* Pods-Prentis.debug.xcconfig */,
+				596265AEB2FAF29C940DD456 /* Pods-Prentis.release.xcconfig */,
+				EC003E374EE7CA69FF11ACA6 /* Pods-PrentisTests.debug.xcconfig */,
+				7F4383E8D95C2CDDDEAF2032 /* Pods-PrentisTests.release.xcconfig */,
+				D37CE9872A8E83A2F67F69F9 /* Pods-PrentisUITests.debug.xcconfig */,
+				CF3D40BD60ECE1A04060EC67 /* Pods-PrentisUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BFD708857F242B3C5538D919 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73D6B010DAD190891D2BCAD5 /* Pods_Prentis.framework */,
+				977922C26251FB45A497B3B6 /* Pods_PrentisTests.framework */,
+				7DD0C6C8AC5D59EDFF493366 /* Pods_PrentisUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,12 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FC30C7F213B36F100FC68BA /* Build configuration list for PBXNativeTarget "Prentis" */;
 			buildPhases = (
-				645BDC18CB6FB52AB050FF38 /* [CP] Check Pods Manifest.lock */,
+				A06BAA13583DAA11F773B0ED /* [CP] Check Pods Manifest.lock */,
 				1FC30C53213B36EB00FC68BA /* Sources */,
 				1FC30C54213B36EB00FC68BA /* Frameworks */,
 				1FC30C55213B36EB00FC68BA /* Resources */,
-				0F9EFBD13A8217C0B3A104FF /* [CP] Embed Pods Frameworks */,
-				0E5DC0236031158D76EC4DE0 /* [CP] Copy Pods Resources */,
+				8B28FDF55C584918FB5EBC72 /* [CP] Embed Pods Frameworks */,
+				8B41B8B61974AED1DD3FDE7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,7 +261,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FC30C82213B36F100FC68BA /* Build configuration list for PBXNativeTarget "PrentisTests" */;
 			buildPhases = (
-				98A2956958B0EE992044E9A4 /* [CP] Check Pods Manifest.lock */,
+				58799360CD7D26E6729BCB4D /* [CP] Check Pods Manifest.lock */,
 				1FC30C67213B36F000FC68BA /* Sources */,
 				1FC30C68213B36F000FC68BA /* Frameworks */,
 				1FC30C69213B36F000FC68BA /* Resources */,
@@ -280,7 +280,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FC30C85213B36F100FC68BA /* Build configuration list for PBXNativeTarget "PrentisUITests" */;
 			buildPhases = (
-				8A64E98E0EEDEF933EB98063 /* [CP] Check Pods Manifest.lock */,
+				0E4316DE9E9F5170DD363DDC /* [CP] Check Pods Manifest.lock */,
 				1FC30C72213B36F100FC68BA /* Sources */,
 				1FC30C73213B36F100FC68BA /* Frameworks */,
 				1FC30C74213B36F100FC68BA /* Resources */,
@@ -370,81 +370,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E5DC0236031158D76EC4DE0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0F9EFBD13A8217C0B3A104FF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/FaceAware/FaceAware.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
-				"${BUILT_PRODUCTS_DIR}/MXSegmentedControl/MXSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaceAware.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		645BDC18CB6FB52AB050FF38 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Prentis-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A64E98E0EEDEF933EB98063 /* [CP] Check Pods Manifest.lock */ = {
+		0E4316DE9E9F5170DD363DDC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,7 +388,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		98A2956958B0EE992044E9A4 /* [CP] Check Pods Manifest.lock */ = {
+		58799360CD7D26E6729BCB4D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -474,6 +400,82 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PrentisTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B28FDF55C584918FB5EBC72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FaceAware/FaceAware.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
+				"${BUILT_PRODUCTS_DIR}/MXSegmentedControl/MXSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaceAware.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B41B8B61974AED1DD3FDE7D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A06BAA13583DAA11F773B0ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Prentis-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -670,7 +672,7 @@
 		};
 		1FC30C80213B36F100FC68BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96D81A0C5AD2555B54EDD2A7 /* Pods-Prentis.debug.xcconfig */;
+			baseConfigurationReference = 0C020879565666C1D6851DCA /* Pods-Prentis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -689,7 +691,7 @@
 		};
 		1FC30C81213B36F100FC68BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 863602C91088968F78A9D685 /* Pods-Prentis.release.xcconfig */;
+			baseConfigurationReference = 596265AEB2FAF29C940DD456 /* Pods-Prentis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -708,7 +710,7 @@
 		};
 		1FC30C83213B36F100FC68BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0DE6598A3005D8FBDD075EE /* Pods-PrentisTests.debug.xcconfig */;
+			baseConfigurationReference = EC003E374EE7CA69FF11ACA6 /* Pods-PrentisTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -729,7 +731,7 @@
 		};
 		1FC30C84213B36F100FC68BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78F6A688FDA9C348CFE89E2E /* Pods-PrentisTests.release.xcconfig */;
+			baseConfigurationReference = 7F4383E8D95C2CDDDEAF2032 /* Pods-PrentisTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -750,7 +752,7 @@
 		};
 		1FC30C86213B36F100FC68BA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10EBFB59D89EB3442B1240CF /* Pods-PrentisUITests.debug.xcconfig */;
+			baseConfigurationReference = D37CE9872A8E83A2F67F69F9 /* Pods-PrentisUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -770,7 +772,7 @@
 		};
 		1FC30C87213B36F100FC68BA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77D9068A03070108F997AA2D /* Pods-PrentisUITests.release.xcconfig */;
+			baseConfigurationReference = CF3D40BD60ECE1A04060EC67 /* Pods-PrentisUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
