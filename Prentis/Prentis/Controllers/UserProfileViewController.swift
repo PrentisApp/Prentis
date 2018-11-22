@@ -32,17 +32,8 @@ extension UIView {
 class UserProfileViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl1: MXSegmentedControl!
-    @IBOutlet weak var interestsView: UIView!
-    @IBOutlet weak var profileView: UIView!
     
-    @IBOutlet weak var expertiseView: UIView!
-
-    func switched(s: UISwitch){
-        let origin: CGFloat = s.isOn ? view.frame.height : 50
-        UIView.animate(withDuration: 0.35, animations: {
-            self.profileView.frame.origin.y = origin
-        })
-    }
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,34 +44,14 @@ class UserProfileViewController: UIViewController {
         segmentedControl1.append(title: "Expertise")
         segmentedControl1.indicator.linePosition = .bottom
         segmentedControl1.indicator.lineHeight = 3.0
-        segmentedControl1.addTarget(self, action: #selector(changeIndex(segmentedControl:)), for: .valueChanged)
-        self.profileView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
-        self.interestsView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
-        self.expertiseView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
+        
+        segmentedControl1.scrollView = self.scrollView
+        
+//        self.profileView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
+//        self.interestsView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
+//        self.expertiseView.roundCorners(corners: [.topLeft, .topRight], radius: 8.0)
 
         
-    }
-    
-    @objc func changeIndex(segmentedControl: MXSegmentedControl) {
-        
-        if let segment = segmentedControl.segment(at: segmentedControl.selectedIndex) {
-            
-            if segment.titleLabel?.text! == "Profile"{
-                self.profileView.isHidden = false
-                self.interestsView.isHidden = true
-                self.expertiseView.isHidden = true
-            }
-            else if segment.titleLabel?.text! == "Interests"{
-                self.profileView.isHidden = true
-                self.interestsView.isHidden = false
-                self.expertiseView.isHidden = true
-            }
-            else{
-                self.profileView.isHidden = true
-                self.interestsView.isHidden = true
-                self.expertiseView.isHidden = false
-            }
-        }
     }
 
 //    @IBAction func chooseView(_ sender: UISegmentedControl) {
