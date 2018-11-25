@@ -53,11 +53,14 @@ class ReceiveCallController: UIViewController {
         print("channel name is: \(channelName)")
         self.db.collection("User").document(Auth.auth().currentUser!.uid).collection("Call").document(channelName).updateData(["status": "accepted"])
         performSegue(withIdentifier: "onCallSegue", sender: self)
-        
-        
     }
     
-
+    @IBAction func onDecline(_ sender: Any) {
+        let channelName = Auth.auth().currentUser!.uid + (caller?.uid)!
+ self.db.collection("User").document(Auth.auth().currentUser!.uid).collection("Call").document(channelName).updateData(["status": "declined"])
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     // MARK: - Navigation
 

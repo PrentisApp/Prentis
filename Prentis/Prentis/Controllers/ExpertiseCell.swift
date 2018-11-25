@@ -12,4 +12,11 @@ class ExpertiseCell: UICollectionViewCell {
     
     @IBOutlet weak var expertiseLabel: UILabel!
     
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        expertiseLabel.layer.masksToBounds = true
+        expertiseLabel.layer.cornerRadius = 100
+        
+    }
 }

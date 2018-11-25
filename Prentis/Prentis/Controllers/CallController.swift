@@ -141,6 +141,7 @@ class CallController: UIViewController, AgoraRtcEngineDelegate {
     }
     @IBAction func onEndCall(_ sender: Any) {
         leaveChannel()
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onSwitchCamera(_ sender: UIButton) {
