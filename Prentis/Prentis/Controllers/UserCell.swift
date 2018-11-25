@@ -16,6 +16,7 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
     @IBOutlet weak var profileImage: UIImageView!
     var expertiseArr: [String] = []
     
+    
     var mentor: Mentor! {
         didSet {
             usernameLabel.text = mentor.username
@@ -25,6 +26,7 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         }
     }
     
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -33,11 +35,11 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         
     }
     
+
     func imageForPath(path: String) {
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        //let imageRef = storageRef.child(document["profileImage"] as! String)
-        let imageRef = storageRef.child(path as! String)
+        let imageRef = storageRef.child(path )
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
                 print("error: \(error)")
@@ -67,4 +69,5 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         
         return cell
     }
+    
 }
