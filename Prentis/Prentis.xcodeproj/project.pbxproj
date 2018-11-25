@@ -22,7 +22,7 @@
 		1F6001BD21A2251C00D91BBF /* ReceiveCallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6001BC21A2251C00D91BBF /* ReceiveCallController.swift */; };
 		1FC30C5B213B36EC00FC68BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */; };
 		1FC30C5D213B36EC00FC68BA /* CallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C5C213B36EC00FC68BA /* CallController.swift */; };
-		1FC30C60213B36EC00FC68BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC30C5E213B36EC00FC68BA /* Main.storyboard */; };
+		1FC30C60213B36EC00FC68BA /* Call.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC30C5E213B36EC00FC68BA /* Call.storyboard */; };
 		1FC30C62213B36F000FC68BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC30C61213B36F000FC68BA /* Assets.xcassets */; };
 		1FC30C65213B36F000FC68BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */; };
 		1FC30C70213B36F000FC68BA /* PrentisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC30C6F213B36F000FC68BA /* PrentisTests.swift */; };
@@ -68,7 +68,7 @@
 		1FC30C57213B36EC00FC68BA /* Prentis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prentis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC30C5A213B36EC00FC68BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC30C5C213B36EC00FC68BA /* CallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallController.swift; sourceTree = "<group>"; };
-		1FC30C5F213B36EC00FC68BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1FC30C5F213B36EC00FC68BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Call.storyboard; sourceTree = "<group>"; };
 		1FC30C61213B36F000FC68BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FC30C64213B36F000FC68BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FC30C66213B36F000FC68BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				0A01C838216E5DBB00B55815 /* UserProfile.storyboard */,
 				1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */,
 				0AE1F95A21614BEF00FF0FA6 /* Start.storyboard */,
-				1FC30C5E213B36EC00FC68BA /* Main.storyboard */,
+				1FC30C5E213B36EC00FC68BA /* Call.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,7 +341,7 @@
 				0A49B29B2148302900A6D2F8 /* GoogleService-Info.plist in Resources */,
 				0AE1F9672161705500FF0FA6 /* HomePage.storyboard in Resources */,
 				1FC30C62213B36F000FC68BA /* Assets.xcassets in Resources */,
-				1FC30C60213B36EC00FC68BA /* Main.storyboard in Resources */,
+				1FC30C60213B36EC00FC68BA /* Call.storyboard in Resources */,
 				0AE1F95B21614BEF00FF0FA6 /* Start.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,12 +510,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1FC30C5E213B36EC00FC68BA /* Main.storyboard */ = {
+		1FC30C5E213B36EC00FC68BA /* Call.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1FC30C5F213B36EC00FC68BA /* Base */,
 			);
-			name = Main.storyboard;
+			name = Call.storyboard;
 			sourceTree = "<group>";
 		};
 		1FC30C63213B36F000FC68BA /* LaunchScreen.storyboard */ = {

@@ -17,11 +17,17 @@ class PopupViewController: UIViewController {
     
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    @IBOutlet weak var callButton: UIButton!
+    
+    @IBOutlet weak var declineLabel: UILabel!
     var mentor: Mentor? = nil
     var db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        declineLabel.isHidden = true
         usernameLabel.text = mentor?.username!
         
         bioLabel.text = mentor?.bio!
@@ -53,6 +59,9 @@ class PopupViewController: UIViewController {
             print("Current data: \(data)")
             if data["status"] as! String == "declined" {
                 print("HI YOUR CALL HAS JUST BEEN DECLINED")
+                self.onDecline()
+                
+                
             } else if data["status"] as! String == "accepted" {
                 print("HI YOUR CALL HAS JUST BEEN ACCEPTED")
                 self.performSegue(withIdentifier: "onAcceptSegue", sender: self)
@@ -61,20 +70,22 @@ class PopupViewController: UIViewController {
             
         }
     }
-    func onAccept() {
-        
-        
+    func onDecline() {
+        cancelButton.isHidden = true
+        callButton.isHidden = true
+        declineLabel.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     @IBAction func cancel(_ sender: Any) {
-        //navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
     
     func imageForPath(path: String) {
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        //let imageRef = storageRef.child(document["profileImage"] as! String)
         let imageRef = storageRef.child(path)
         imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
@@ -89,14 +100,8 @@ class PopupViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         let channelName = (mentor?.uid)! + Auth.auth().currentUser!.uid
-        print("channel name is: \(channelName)")
         let localUID: UInt = 6
         let remoteUID: UInt = 5
         

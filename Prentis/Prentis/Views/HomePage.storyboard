@@ -52,6 +52,9 @@
                                         <rect key="frame" x="24" y="156" width="52" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Decline"/>
+                                        <connections>
+                                            <action selector="onDecline:" destination="4Zh-uy-pel" eventType="touchUpInside" id="s4w-al-hXD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,7 +77,7 @@
         <!--CallController-->
         <scene sceneID="jRN-zp-eVF">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CallController" storyboardName="Main" referencedIdentifier="CallController" id="whi-Xn-6Vp" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="CallController" storyboardName="Call" referencedIdentifier="CallController" id="whi-Xn-6Vp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lg-KH-OX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3066" y="-1204"/>
@@ -146,8 +149,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="76" height="44.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHo-YO-pbY" userLabel="expertiseLabel">
-                                                                        <rect key="frame" x="4" y="7" width="72" height="30"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Piano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHo-YO-pbY" userLabel="expertiseLabel">
+                                                                        <rect key="frame" x="4" y="7" width="59" height="27"/>
+                                                                        <color key="backgroundColor" red="1" green="0.46871024993176058" blue="0.43598268094657433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="30" id="F5d-Jt-NWV"/>
                                                                             <constraint firstAttribute="width" constant="72" id="sN6-aX-nAj"/>
@@ -234,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GE2-iI-c1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="-229"/>
+            <point key="canvasLocation" x="1797.5999999999999" y="-229.83508245877064"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="a0Y-Bi-QbN">
@@ -285,6 +289,13 @@
                                             <constraint firstAttribute="width" constant="69" id="FM4-WJ-NAK"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No answer." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdI-xk-sic">
+                                        <rect key="frame" x="77" y="154" width="87" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -304,6 +315,9 @@
                     </view>
                     <connections>
                         <outlet property="bioLabel" destination="rIf-oG-5Ml" id="ceS-0I-6CQ"/>
+                        <outlet property="callButton" destination="UtU-qg-WBJ" id="lJa-bE-wDr"/>
+                        <outlet property="cancelButton" destination="Qwb-zk-zZA" id="1vE-g0-Qm8"/>
+                        <outlet property="declineLabel" destination="AdI-xk-sic" id="wrE-g1-9pK"/>
                         <outlet property="profileImage" destination="b78-KA-w4E" id="bwa-YJ-7r0"/>
                         <outlet property="usernameLabel" destination="2m8-bM-Zfu" id="Dub-gO-ly1"/>
                         <segue destination="whi-Xn-6Vp" kind="presentation" identifier="onAcceptSegue" id="azq-T1-0cW"/>
@@ -311,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VOh-1d-Fm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3241" y="-315"/>
+            <point key="canvasLocation" x="3240.8000000000002" y="-315.29235382308849"/>
         </scene>
         <!--NavigationController-->
         <scene sceneID="K1A-6h-RbP">
