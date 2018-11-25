@@ -25,6 +25,18 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let docRef = db.collection("User").document((Auth.auth().currentUser?.uid)!)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let defaults = UserDefaults.standard
+                defaults.set(document["interests"] as! [String], forKey: "interestsArray")
+                defaults.set(document["expertise"] as! [String], forKey: "expertiseArray")
+                
+            } else {
+                print("Document does not exist")
+            }
+        }
         
         db.collection("User").getDocuments { (querySnapshot, error) in
             if let error = error {
@@ -92,7 +104,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func signOutButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
         do {
             try! Auth.auth().signOut()
         }

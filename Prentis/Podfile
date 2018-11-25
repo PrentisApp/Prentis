@@ -24,5 +24,8 @@ target 'Prentis' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'FaceAware'
+  pod 'MXSegmentedControl'
+  pod 'M13Checkbox'
+  pod 'IQKeyboardManagerSwift'
 
 end
