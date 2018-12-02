@@ -9,7 +9,8 @@
 import UIKit
 import FirebaseStorage
 
-class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
+
+class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var expertiseCollection: UICollectionView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
@@ -32,6 +33,12 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         super.awakeFromNib()
         expertiseCollection.delegate = self
         expertiseCollection.dataSource = self
+        
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
         
     }
     
@@ -66,8 +73,22 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExpertiseCell", for: indexPath) as! ExpertiseCell
         cell.expertiseLabel.text = expertiseArr[indexPath.row] as! String
-        
         return cell
     }
     
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let word = expertiseArr[indexPath.row] as! String
+        let labelWord = UILabel()
+        labelWord.text = word
+        labelWord.font = labelWord.font.withSize(17.0)
+        labelWord.sizeToFit()
+        let width = labelWord.intrinsicContentSize.width + 25
+        
+        return CGSize(width: width, height: 27)
+
+
+    }
 }
