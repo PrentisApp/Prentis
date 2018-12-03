@@ -14,9 +14,12 @@ import FirebaseAuth
 class ReceiveCallController: UIViewController {
     
     @IBOutlet weak var profileImage: UIImageView!
+
     @IBOutlet weak var usernameLabel: UILabel!
+    
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var popupView: UIView!
     var caller: Mentor? = nil
     var db = Firestore.firestore()
     
@@ -27,6 +30,13 @@ class ReceiveCallController: UIViewController {
         bioLabel.text = caller?.bio!
         imageForPath(path: (caller?.imagePath!)!)
         // Do any additional setup after loading the view.
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
+        
+        popupView.layer.cornerRadius = 10
     }
     
     func imageForPath(path: String) {

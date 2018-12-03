@@ -12,6 +12,7 @@ import FirebaseFirestore
 import FirebaseAuth
 class PopupViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var popupView: UIView!
     
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -22,16 +23,28 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var callButton: UIButton!
     
     @IBOutlet weak var declineLabel: UILabel!
+    @IBOutlet weak var line1: UIView!
+    @IBOutlet weak var line2: UIView!
+    
     var mentor: Mentor? = nil
     var db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         declineLabel.isHidden = true
-        usernameLabel.text = mentor?.username!
         
+        usernameLabel.text = mentor?.username!
         bioLabel.text = mentor?.bio!
+        
         imageForPath(path: (mentor?.imagePath!)!)
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
+        
+        popupView.layer.cornerRadius = 10
+
         // Do any additional setup after loading the view.
     }
     
@@ -73,6 +86,8 @@ class PopupViewController: UIViewController {
     func onDecline() {
         cancelButton.isHidden = true
         callButton.isHidden = true
+        line1.isHidden = true
+        line2.isHidden = true
         declineLabel.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
             self.dismiss(animated: true, completion: nil)

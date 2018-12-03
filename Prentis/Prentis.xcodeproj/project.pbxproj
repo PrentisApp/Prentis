@@ -133,7 +133,6 @@
 				0A90FDE921A4AAE100990648 /* ExpertiseViewController.swift */,
 				0ACC9910218E3FF200ACCF87 /* ProfileViewController.swift */,
 				1FC30C5C213B36EC00FC68BA /* CallController.swift */,
-				1FC30C5C213B36EC00FC68BA /* CallController.swift */,
 				1F59A7212163BFCF00A5FBC0 /* UserCell.swift */,
 				0A01C83A216E5DE200B55815 /* UserProfileViewController.swift */,
 				0AE1F9682161712300FF0FA6 /* HomePageViewController.swift */,
@@ -256,7 +255,6 @@
 				1FC30C54213B36EB00FC68BA /* Frameworks */,
 				1FC30C55213B36EB00FC68BA /* Resources */,
 				8B28FDF55C584918FB5EBC72 /* [CP] Embed Pods Frameworks */,
-				8B41B8B61974AED1DD3FDE7D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,8 +431,10 @@
 				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
 				"${BUILT_PRODUCTS_DIR}/MXSegmentedControl/MXSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -450,32 +450,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MXSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B41B8B61974AED1DD3FDE7D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Prentis/Pods-Prentis-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A06BAA13583DAA11F773B0ED /* [CP] Check Pods Manifest.lock */ = {
@@ -694,7 +678,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WVUW59QX7W;
+				DEVELOPMENT_TEAM = 5HR7QQ25H6;
 				INFOPLIST_FILE = Prentis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -713,7 +697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WVUW59QX7W;
+				DEVELOPMENT_TEAM = 5HR7QQ25H6;
 				INFOPLIST_FILE = Prentis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
