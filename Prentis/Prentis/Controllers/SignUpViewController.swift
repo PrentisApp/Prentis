@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
 
+    @IBOutlet weak var bioText: UITextView!
     @IBOutlet weak var profileImage: UIImageView!
     
     @IBOutlet weak var chooseImageButton: UIButton!
@@ -56,7 +57,11 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         if profileImage != nil {
             chooseImageButton.setTitle("", for: UIControlState.normal)
         }
-
+        
+        let origImage = UIImage(named: "icons8-user-filled-100")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        chooseImageButton.setImage(tintedImage, for: .normal)
+        chooseImageButton.tintColor = .white
         // Do any additional setup after loading the view.
     }
     
@@ -99,6 +104,12 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         profileImage.contentMode = UIViewContentMode.scaleAspectFill
         profileImage.clipsToBounds = true
         profileImage.focusOnFaces = true
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
+        print(bioText.text)
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -123,7 +134,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                         print("Here's your path motherfucker \(path)")
                         self.uploadImageToFirebaseStorage(data: image as NSData , reference: path)
                         
-                        let information = ["bio": "", "uid": Auth.auth().currentUser?.uid as Any, "username": username, "email": email, "interests": [], "expertise": [], "active": true, "profileImage": path]
+                        let information = ["bio": self.bioText.text, "uid": Auth.auth().currentUser?.uid as Any, "username": username, "email": email, "interests": [], "expertise": [], "active": true, "profileImage": path]
                         
                         
                         self.db.collection("User").document(Auth.auth().currentUser?.uid ?? username).setData(information) { err in
