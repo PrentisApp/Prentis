@@ -27,5 +27,6 @@ target 'Prentis' do
   pod 'MXSegmentedControl'
   pod 'M13Checkbox'
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Performance'
 
 end
