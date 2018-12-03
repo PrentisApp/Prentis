@@ -16,8 +16,15 @@ class CallController: UIViewController, AgoraRtcEngineDelegate {
     @IBOutlet weak var remoteVideoMutedIndicator: UIImageView!
     @IBOutlet weak var localVideoMutedBg: UIImageView!
     @IBOutlet weak var localVideoMutedIndicator: UIImageView!
+    @IBOutlet weak var muteButton: UIButton!
+    @IBOutlet weak var muteView: UIView!
+    
+    @IBOutlet weak var switchButton: UIButton!
+    @IBOutlet weak var switchView: UIView!
     
     @IBOutlet weak var endButton: UIButton!
+    @IBOutlet weak var endView: UIView!
+    
     var agoraKit: AgoraRtcEngineKit?
     var workItem: DispatchWorkItem?
     var localCenter = CGPoint(x: 0,y :0)
@@ -92,13 +99,45 @@ class CallController: UIViewController, AgoraRtcEngineDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        //muteView.layer.borderWidth = 1
+        muteView.layer.masksToBounds = false
+        //muteView.layer.borderColor = UIColor.black.cgColor
+        muteView.layer.cornerRadius = muteView.frame.height/2
+        muteView.clipsToBounds = true
+        let origImage = UIImage(named: "icons8-no-audio-filled-100")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        muteButton.setImage(tintedImage, for: .normal)
+        muteButton.tintColor = .white
+
+        //endView.layer.borderWidth = 1
+        endView.layer.masksToBounds = false
+        //endView.layer.borderColor = UIColor.black.cgColor
+        endView.layer.cornerRadius = endView.frame.height/2
+        endView.clipsToBounds = true
+        
+        let origEndImage = UIImage(named: "icons8-delete-filled-100")
+        let tintedEndImage = origEndImage?.withRenderingMode(.alwaysTemplate)
+        endButton.setImage(tintedEndImage, for: .normal)
+        endButton.tintColor = .white
+        
+        //switchView.layer.borderWidth = 1
+        switchView.layer.masksToBounds = false
+        //switchView.layer.borderColor = UIColor.black.cgColor
+        switchView.layer.cornerRadius = switchView.frame.height/2
+        switchView.clipsToBounds = true
+        
+        let origSwitchImage = UIImage(named: "icons8-switch-camera-filled-100")
+        let tintedSwitchImage = origSwitchImage?.withRenderingMode(.alwaysTemplate)
+        switchButton.setImage(tintedSwitchImage, for: .normal)
+        switchButton.tintColor = .white
+
         // Do any additional setup after loading the view, typically from a nib.
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
             self.hideControlButtons()
         })
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.toggleControlButtons(_:)))
         remoteVideo.addGestureRecognizer(tap)
-        endButton.layer.zPosition = 2
+        endView.layer.zPosition = 2
         initializeAgoraEngine()
         controlButtons?.backgroundColor = UIColor(white: 1, alpha: 0.0)
         setChannelProfile()
