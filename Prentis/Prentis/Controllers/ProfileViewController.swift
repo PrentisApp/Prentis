@@ -77,6 +77,14 @@ class ProfileViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        print("Kevin Assitores This was called")
+        let docRef = db.collection("User").document((Auth.auth().currentUser?.uid)!)
+        docRef.updateData([
+            "bio": bioText.text,
+            ])
+    }
+    
     @IBAction func signOut(_ sender: Any) {
         do {
             try! Auth.auth().signOut()

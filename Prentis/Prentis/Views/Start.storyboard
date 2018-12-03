@@ -26,21 +26,30 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sxd-rE-cB9">
-                                <rect key="frame" x="30" y="243" width="314" height="30"/>
+                                <rect key="frame" x="30" y="310" width="314" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CsQ-ZE-5EA">
-                                <rect key="frame" x="30" y="318" width="314" height="30"/>
+                                <rect key="frame" x="30" y="242" width="314" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SME-4T-3R2">
+                                <rect key="frame" x="88.5" y="617" width="198" height="30"/>
+                                <state key="normal" title="Not a member? Sign up now!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="YA5-qL-Ukp" kind="show" id="huR-zZ-cej"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGb-nN-Zqa">
-                                <rect key="frame" x="30" y="389" width="314" height="47"/>
+                                <rect key="frame" x="30" y="377" width="314" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -50,15 +59,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButton:" destination="Fsj-aS-p9p" eventType="touchUpInside" id="1Hk-jA-C7d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SME-4T-3R2">
-                                <rect key="frame" x="88.5" y="617" width="198" height="30"/>
-                                <state key="normal" title="Not a member? Sign up now!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="YA5-qL-Ukp" kind="show" id="huR-zZ-cej"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -184,6 +184,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="edn-iy-b74"/>
+        <segue reference="b2z-DQ-ES3"/>
     </inferredMetricsTieBreakers>
 </document>
