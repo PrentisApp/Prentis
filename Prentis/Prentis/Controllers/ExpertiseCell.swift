@@ -15,8 +15,10 @@ class ExpertiseCell: UICollectionViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        expertiseLabel.layer.masksToBounds = true
-        expertiseLabel.layer.cornerRadius = 100
+        expertiseLabel.layer.cornerRadius = 10
+        expertiseLabel.clipsToBounds = true
+        expertiseLabel.sizeToFit()
         
     }
 }
+

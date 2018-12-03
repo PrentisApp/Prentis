@@ -21,7 +21,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var db = Firestore.firestore()
     var documents = [] as [[String: Any]]
     var caller: Mentor!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +42,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
                 print("Hey you got an error querying all the users \(error)")
             } else {
                 for document in querySnapshot!.documents {
-                    self.documents.append(document.data() as [String: Any])
+                    if (document.documentID != (Auth.auth().currentUser?.uid)!){
+                        self.documents.append(document.data() as [String: Any])
+                    }
                 }
                 self.userTable.reloadData()
             }
@@ -87,17 +88,35 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func numberOfSections(in userTable: UITableView) -> Int {
-        return 1
+        return self.documents.count
     }
     
     func tableView(_ userTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.documents.count
+        return 1
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 7
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+
     
     func tableView(_ userTable: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = userTable.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserCell
-        let document = self.documents[indexPath.row]
+        let document = self.documents[indexPath.section]
+        
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
+        cell.layer.cornerRadius = 5
+        cell.clipsToBounds = true
+        
         cell.mentor = Mentor(mentorDoc: document)
         
         return cell
