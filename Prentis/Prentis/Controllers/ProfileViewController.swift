@@ -69,6 +69,11 @@ class ProfileViewController: UIViewController, UITextViewDelegate {
                 print("Document does not exist")
             }
         }
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.borderColor = UIColor.black.cgColor
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
     
