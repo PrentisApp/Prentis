@@ -266,7 +266,7 @@
                         <viewLayoutGuide key="safeArea" id="S26-av-qw1"/>
                     </view>
                     <navigationItem key="navigationItem" id="BZN-G0-Zyn">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="eSy-H7-cuv">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="eSy-H7-cuv">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vkc-He-OEJ">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -278,16 +278,6 @@
                             <connections>
                                 <segue destination="HPQ-o4-4wj" kind="presentation" identifier="toUserSegue" id="WyE-Da-fqE"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="xn9-lX-LEB">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GG9-QC-3V9">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sign Out"/>
-                                <connections>
-                                    <action selector="signOutButton:" destination="1nt-jf-QnN" eventType="touchUpInside" id="5u8-BQ-MMh"/>
-                                </connections>
-                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
