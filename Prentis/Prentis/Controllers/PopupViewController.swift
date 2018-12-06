@@ -31,6 +31,11 @@ class PopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        popupView.layer.shadowColor = UIColor.black.cgColor
+        popupView.layer.shadowOpacity = 1
+        popupView.layer.shadowOffset = CGSize.zero
+        popupView.layer.shadowRadius = 5
+        
         declineLabel.isHidden = true
         
         usernameLabel.text = mentor?.username!

@@ -24,6 +24,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 3
         let docRef = db.collection("User").document((Auth.auth().currentUser?.uid)!)
         
         docRef.getDocument { (document, error) in
@@ -116,6 +121,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.layer.borderWidth = 0.5
         cell.layer.cornerRadius = 5
         cell.clipsToBounds = true
+        cell.layer.masksToBounds = true
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 1
+        cell.layer.shadowOffset = CGSize.zero
+        cell.layer.shadowRadius = 10
         
         cell.mentor = Mentor(mentorDoc: document)
         
