@@ -268,7 +268,7 @@
                     <navigationItem key="navigationItem" id="BZN-G0-Zyn">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="eSy-H7-cuv">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vkc-He-OEJ">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="User"/>
                                 <connections>
@@ -299,7 +299,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyQ-h5-5Dx">
-                                <rect key="frame" x="58" y="230.5" width="259" height="206"/>
+                                <rect key="frame" x="58" y="667" width="259" height="206"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwb-zk-zZA">
                                         <rect key="frame" x="0.0" y="163" width="129" height="43"/>
@@ -397,8 +397,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.35464348591549294" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="centerX" secondItem="Ka9-ge-3ba" secondAttribute="centerX" id="deP-l0-ssG"/>
-                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="centerY" secondItem="Ka9-ge-3ba" secondAttribute="centerY" id="zVa-vN-T9X"/>
+                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="centerX" secondItem="Ka9-ge-3ba" secondAttribute="centerX" id="tkr-3Q-MbA"/>
+                            <constraint firstItem="hyQ-h5-5Dx" firstAttribute="top" secondItem="Ka9-ge-3ba" secondAttribute="bottom" id="xCL-cD-719"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="j0h-nr-GpV"/>
                     </view>
@@ -409,6 +409,7 @@
                         <outlet property="declineLabel" destination="zJc-Um-PNL" id="YSw-PK-UC2"/>
                         <outlet property="line1" destination="MaQ-gg-bOx" id="ZAa-aj-gMb"/>
                         <outlet property="line2" destination="3dG-2R-NEf" id="5OH-dQ-mtN"/>
+                        <outlet property="popupTopConst" destination="xCL-cD-719" id="uor-On-0mg"/>
                         <outlet property="popupView" destination="hyQ-h5-5Dx" id="MNe-Ms-SCX"/>
                         <outlet property="profileImage" destination="b78-KA-w4E" id="bwa-YJ-7r0"/>
                         <outlet property="usernameLabel" destination="2m8-bM-Zfu" id="Dub-gO-ly1"/>
@@ -439,6 +440,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RS0-u1-L3Q"/>
+        <segue reference="azq-T1-0cW"/>
     </inferredMetricsTieBreakers>
 </document>
