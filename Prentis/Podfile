@@ -28,5 +28,6 @@ target 'Prentis' do
   pod 'M13Checkbox'
   pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Performance'
-
+  pod 'Alamofire', '~> 4.4'
+  pod 'PusherSwift'
 end

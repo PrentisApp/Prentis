@@ -1,11 +1,13 @@
 PODS:
   - AgoraRtcEngine_iOS (2.3.0)
+  - Alamofire (4.7.3)
   - BoringSSL (10.0.6):
     - BoringSSL/Implementation (= 10.0.6)
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
+  - CryptoSwift (0.9.0)
   - FaceAware (1.4.0)
   - Firebase/Auth (5.7.0):
     - Firebase/CoreOnly
@@ -138,9 +140,18 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.1)
+  - PusherSwift (6.1.0):
+    - CryptoSwift (~> 0.9.0)
+    - ReachabilitySwift (~> 4.1.0)
+    - Starscream (~> 3.0.5)
+    - TaskQueue (~> 1.1.1)
+  - ReachabilitySwift (4.1.0)
+  - Starscream (3.0.5)
+  - TaskQueue (1.1.1)
 
 DEPENDENCIES:
   - AgoraRtcEngine_iOS
+  - Alamofire (~> 4.4)
   - FaceAware
   - Firebase/Auth
   - Firebase/Core
@@ -152,11 +163,14 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - M13Checkbox
   - MXSegmentedControl
+  - PusherSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AgoraRtcEngine_iOS
+    - Alamofire
     - BoringSSL
+    - CryptoSwift
     - FaceAware
     - Firebase
     - FirebaseAnalytics
@@ -183,10 +197,16 @@ SPEC REPOS:
     - MXSegmentedControl
     - nanopb
     - Protobuf
+    - PusherSwift
+    - ReachabilitySwift
+    - Starscream
+    - TaskQueue
 
 SPEC CHECKSUMS:
   AgoraRtcEngine_iOS: 8cdfb59835dee475ddbaa0b24e407818cc0768c4
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
+  CryptoSwift: bca8c5b653dcc2d9734409242a070ff53bafac86
   FaceAware: 94410295a219c4a397ce525eab0063d6b17258aa
   Firebase: 734a4f92957aa6c40e7ae3fda3d9359e1890aa87
   FirebaseAnalytics: 993577e91157feb40945abedd6ab346d8a4b6ac8
@@ -213,7 +233,11 @@ SPEC CHECKSUMS:
   MXSegmentedControl: 47b36aac2fda4d8c9117ab05088937e8c102796f
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  PusherSwift: 6f2535d616cf0d6867a58bee501999995ad37999
+  ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
+  TaskQueue: 53a3cdaf817d9ce3cd50837ff6610aeb7b968997
 
-PODFILE CHECKSUM: 78423d3199cfa4b6f05997107c95d23a2a64dc97
+PODFILE CHECKSUM: 4b00ee96c81bc6b27ae8d5fef498536d9ba3abd9
 
 COCOAPODS: 1.5.3
