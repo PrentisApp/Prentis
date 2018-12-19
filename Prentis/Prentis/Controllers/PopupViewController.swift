@@ -26,6 +26,7 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var line1: UIView!
     @IBOutlet weak var line2: UIView!
     
+    @IBOutlet weak var popupTopConst: NSLayoutConstraint!
     var mentor: Mentor? = nil
     var db = Firestore.firestore()
     
@@ -49,8 +50,18 @@ class PopupViewController: UIViewController {
         profileImage.clipsToBounds = true
         
         popupView.layer.cornerRadius = 10
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+            // Put your code which should be executed with a delay here
+            self.popupTopConst.isActive = false
+            self.popupView.centerYAnchor.constraint(equalTo: (self.popupView.superview?.centerYAnchor)!).isActive = true
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: {res in
+                print("did it work?")
+            })
+        })
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func call(_ sender: Any) {
