@@ -56,6 +56,8 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
         
+        
+        
     }
     
 
