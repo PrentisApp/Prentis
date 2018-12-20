@@ -31,7 +31,7 @@
 
     app.post('/call', (req, res, next) => {
       let payload = {channel: req.body.channel, caller: req.body.caller};
-      pusher.trigger(req.body.channel, 'calls', payload);
+      pusher.trigger('calls', req.body.channel, payload);
       console.log("hi you just called");
       console.log("caller: " + req.body.caller);
       console.log("channel: " + req.body.channel);

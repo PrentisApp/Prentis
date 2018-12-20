@@ -32,18 +32,21 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var popupTopConst: NSLayoutConstraint!
     var mentor: Mentor? = nil
     var db = Firestore.firestore()
-    static let API_ENDPOINT = "http://localhost:4000";
+    //static let API_ENDPOINT = "http://localhost:4000";
+    static let API_ENDPOINT = "http://192.168.0.6:4000";
+
     var pusher : Pusher!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        listenForCall()
+        //listenForCall()
         
         // --- Update online presence at intervals --- //
 //        let date = Date().addingTimeInterval(0)
 //        let timer = Timer(fireAt: date, interval: 1, target: self, selector: #selector(postOnlinePresence), userInfo: nil, repeats: true)
 //        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+        
         
         popupView.layer.shadowColor = UIColor.black.cgColor
         popupView.layer.shadowOpacity = 1
@@ -84,39 +87,41 @@ class PopupViewController: UIViewController {
         
         
         
-        let menteeUID = Auth.auth().currentUser!.uid
-        let channelName = mentor!.uid! + menteeUID
-        let channel = ["menteeUID": menteeUID, "mentorUID": mentor!.uid!, "status": "calling"]
-        db.collection("User").document((self.mentor?.uid)!).collection("Call")
-            .document(channelName).setData(channel){ err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-        }
-        db.collection("User").document((self.mentor?.uid)!).collection("Call").document(channelName).addSnapshotListener { DocumentSnapshot, error in
-            guard let document = DocumentSnapshot else {
-                print("Error fetching document: \(error)")
-                return
-            }
-            guard let data = document.data() else {
-                print("Document data was empty.")
-                return
-            }
-            print("Current data: \(data)")
-            if data["status"] as! String == "declined" {
-                print("HI YOUR CALL HAS JUST BEEN DECLINED")
-                self.onDecline()
-                
-                
-            } else if data["status"] as! String == "accepted" {
-                print("HI YOUR CALL HAS JUST BEEN ACCEPTED")
-                self.performSegue(withIdentifier: "onAcceptSegue", sender: self)
-                
-            }
-            
-        }
+        // --- old database method of calling --- //
+
+//        let menteeUID = Auth.auth().currentUser!.uid
+//        let channelName = mentor!.uid! + menteeUID
+//        let channel = ["menteeUID": menteeUID, "mentorUID": mentor!.uid!, "status": "calling"]
+//        db.collection("User").document((self.mentor?.uid)!).collection("Call")
+//            .document(channelName).setData(channel){ err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//            } else {
+//                print("Document successfully written!")
+//            }
+//        }
+//        db.collection("User").document((self.mentor?.uid)!).collection("Call").document(channelName).addSnapshotListener { DocumentSnapshot, error in
+//            guard let document = DocumentSnapshot else {
+//                print("Error fetching document: \(error)")
+//                return
+//            }
+//            guard let data = document.data() else {
+//                print("Document data was empty.")
+//                return
+//            }
+//            print("Current data: \(data)")
+//            if data["status"] as! String == "declined" {
+//                print("HI YOUR CALL HAS JUST BEEN DECLINED")
+//                self.onDecline()
+//
+//
+//            } else if data["status"] as! String == "accepted" {
+//                print("HI YOUR CALL HAS JUST BEEN ACCEPTED")
+//                self.performSegue(withIdentifier: "onAcceptSegue", sender: self)
+//
+//            }
+//
+//        }
     }
     func onDecline() {
         cancelButton.isHidden = true
@@ -178,24 +183,24 @@ class PopupViewController: UIViewController {
     }
     
     
-    private func listenForCall() {
-        let key = "200b87f4cd87ab883b75"
-        let cluster = "us2"
-        let uid = Auth.auth().currentUser!.uid
-        
-        pusher = Pusher(key: key, options: PusherClientOptions(host: .cluster(cluster)))
-        
-        let channel = pusher.subscribe("calls")
-        let _ = channel.bind(eventName: uid, callback: { (data: Any?) -> Void in
-            if let data = data as? [String: AnyObject] {
-                //let username = data["username"] as! String
-                print("hey I just got some shit")
-
-            }
-        })
-        
-        pusher.connect()
-    }
+//    private func listenForCall() {
+//        let key = "200b87f4cd87ab883b75"
+//        let cluster = "us2"
+//        let uid = Auth.auth().currentUser!.uid
+//
+//        pusher = Pusher(key: key, options: PusherClientOptions(host: .cluster(cluster)))
+//
+//        let channel = pusher.subscribe("calls")
+//        let _ = channel.bind(eventName: uid, callback: { (data: Any?) -> Void in
+//            if let data = data as? [String: AnyObject] {
+//                //let username = data["username"] as! String
+//                print("hey I just got some shit")
+//
+//            }
+//        })
+//
+//        pusher.connect()
+//    }
     
 
 }
