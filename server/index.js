@@ -29,9 +29,12 @@
       console.log("hi I got a message");
     });
 
-    app.post('/online', (req, res, next) => {
-      let payload = {username: req.body.username};
-      pusher.trigger('new_status', 'online', payload);
+    app.post('/call', (req, res, next) => {
+      let payload = {channel: req.body.channel, caller: req.body.caller};
+      pusher.trigger(req.body.channel, 'calls', payload);
+      console.log("hi you just called");
+      console.log("caller: " + req.body.caller);
+      console.log("channel: " + req.body.channel);
       res.json({success: 200});
     });
 

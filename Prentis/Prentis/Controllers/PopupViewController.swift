@@ -38,12 +38,12 @@ class PopupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        listenForRealtimeEvents()
+        listenForCall()
         
         // --- Update online presence at intervals --- //
-        let date = Date().addingTimeInterval(0)
-        let timer = Timer(fireAt: date, interval: 1, target: self, selector: #selector(postOnlinePresence), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
+//        let date = Date().addingTimeInterval(0)
+//        let timer = Timer(fireAt: date, interval: 1, target: self, selector: #selector(postOnlinePresence), userInfo: nil, repeats: true)
+//        RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
         
         popupView.layer.shadowColor = UIColor.black.cgColor
         popupView.layer.shadowOpacity = 1
@@ -78,7 +78,7 @@ class PopupViewController: UIViewController {
     }
     
     @IBAction func call(_ sender: Any) {
-        postStatusUpdate(message: "hi this is a message")
+        callRequest()
         
         
         
@@ -160,45 +160,36 @@ class PopupViewController: UIViewController {
         (segue.destination as! CallController).remoteUID = remoteUID
     }
     
-    public func postStatusUpdate(message: String) {
-        let params: Parameters = ["username": "hello", "status": message]
+    public func callRequest() {
+        let params: Parameters = ["channel": mentor!.uid!, "caller": Auth.auth().currentUser!.uid]
         
-        Alamofire.request(PopupViewController.API_ENDPOINT + "/status", method: .post, parameters: params).validate().responseJSON { response in
+        Alamofire.request(PopupViewController.API_ENDPOINT + "/call", method: .post, parameters: params).validate().responseJSON { response in
             switch response.result {
                 
             case .success:
                 print("hey this was a success")
                 _ = "Updated"
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    @objc public func postOnlinePresence() {
-        let params: Parameters = ["username": "hello"]
-        
-        Alamofire.request(PopupViewController.API_ENDPOINT + "/online", method: .post, parameters: params).validate().responseJSON { response in
-            switch response.result {
                 
-            case .success:
-                _ = "Online"
             case .failure(let error):
                 print(error)
+                
             }
         }
     }
     
-    private func listenForRealtimeEvents() {
-        pusher = Pusher(key: "200b87f4cd87ab883b75", options: PusherClientOptions(host: .cluster("us2")))
+    
+    private func listenForCall() {
+        let key = "200b87f4cd87ab883b75"
+        let cluster = "us2"
+        let uid = Auth.auth().currentUser!.uid
         
-        let channel = pusher.subscribe("new_status")
-        let _ = channel.bind(eventName: "online", callback: { (data: Any?) -> Void in
+        pusher = Pusher(key: key, options: PusherClientOptions(host: .cluster(cluster)))
+        
+        let channel = pusher.subscribe("calls")
+        let _ = channel.bind(eventName: uid, callback: { (data: Any?) -> Void in
             if let data = data as? [String: AnyObject] {
-                let username = data["username"] as! String
+                //let username = data["username"] as! String
                 print("hey I just got some shit")
-                //let index = self.friends.index(where: { $0["username"] == username })
-                
 
             }
         })
