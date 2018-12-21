@@ -28,7 +28,9 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         listenForCall()
+        
         self.navigationController?.navigationBar.layer.masksToBounds = false
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
@@ -63,38 +65,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         userTable.dataSource = self
         userTable.delegate = self
         let mentorUID = Auth.auth().currentUser!.uid
-//        db.collection("User").document(mentorUID).collection("Call").whereField("status", isEqualTo: "calling").addSnapshotListener { QuerySnapshot, error in
-//            print("hi did you run")
-//            guard let documents = QuerySnapshot?.documents else {
-//                print("Error fetching documents: \(error!)")
-//                return
-//            }
-//            if documents.count > 0 {
-//                let channelName = documents[0].documentID
-//                let menteeUID = documents[0].data()["menteeUID"] as! String
-//                //self.db.collection("User").document(Auth.auth().currentUser!.uid).collection("Call").document(channelName).updateData(["status": "accepted"])
-//
-//                let docRef = self.db.collection("User").document(menteeUID)
-//
-//                docRef.getDocument { (document, error) in
-//                    if let document = document, document.exists {
-//                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                        self.caller = Mentor(mentorDoc: document.data() as! [String: Any])
-//                        self.performSegue(withIdentifier: "receiveSegue", sender: self)
-//                        print("Document data: \(dataDescription)")
-//                    } else {
-//                        print("Document does not exist")
-//                    }
-//                }
-//
-//            } else {
-//                print("NOTHING TO DO HERE")
-//            }
-//
-//
-//
-//        }
-        
+
     }
     
     func numberOfSections(in userTable: UITableView) -> Int {
@@ -138,7 +109,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func signOutButton(_ sender: Any) {
-//        self.dismiss(animated: true, completion: nil)
+
         do {
             try! Auth.auth().signOut()
         }
@@ -149,6 +120,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let storyboard = UIStoryboard(name: "Start", bundle: nil)
         let signInPage = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         self.present(signInPage, animated: true, completion: nil)
+        
     }
     
     
@@ -163,28 +135,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         
         performSegue(withIdentifier: "popupSegue", sender: cell)
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        //print("uid \(mentor.uid!)")
-        if segue.identifier == "popupSegue" {
-            let mentor = (sender as! UserCell).mentor! as Mentor
-            (segue.destination as! PopupViewController).mentor = mentor
-        } else if segue.identifier == "receiveSegue" {
-            (segue.destination as! ReceiveCallController).caller = caller
-        }
-        
-        
-        
-        
-        
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
     
     private func listenForCall() {
         let key = "200b87f4cd87ab883b75"
@@ -198,11 +148,8 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let _ = channel.bind(eventName: uid, callback: { (data: Any?) -> Void in
             if let data = data as? [String: AnyObject] {
                 
-                print("hey I just got some shit!!!!!!!!!!!!!!!!")
-                
                 let channelName = data["channel"] as! String
                 let menteeUID = data["caller"] as! String
-                
                 let docRef = self.db.collection("User").document(menteeUID)
                 
                 docRef.getDocument { (document, error) in
@@ -216,11 +163,23 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
                     }
                 }
                 
-                
             }
         })
         
         pusher.connect()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        //print("uid \(mentor.uid!)")
+        if segue.identifier == "popupSegue" {
+            let mentor = (sender as! UserCell).mentor! as Mentor
+            (segue.destination as! PopupViewController).mentor = mentor
+        } else if segue.identifier == "receiveSegue" {
+            (segue.destination as! ReceiveCallController).caller = caller
+        }
+        
     }
 
 }
