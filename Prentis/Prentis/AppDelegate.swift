@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.pushNotifications.start(instanceId: "4ae3f5f0-a0ec-4b96-8ac1-aa02de51c422")
         self.pushNotifications.registerForRemoteNotifications()
-        try? self.pushNotifications.subscribe(interest: "hello")
+        try? self.pushNotifications.subscribe(interest: "debug-hello")
         
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()        
