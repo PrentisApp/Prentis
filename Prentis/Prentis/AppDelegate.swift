@@ -11,13 +11,31 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import IQKeyboardManagerSwift
+import PushNotifications
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
+    let pushNotifications = PushNotifications.shared
+    
+
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        self.pushNotifications.registerDeviceToken(deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        self.pushNotifications.handleNotification(userInfo: userInfo)
+    }
+    
     //var ref: DatabaseReference!
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.pushNotifications.start(instanceId: "4ae3f5f0-a0ec-4b96-8ac1-aa02de51c422")
+        self.pushNotifications.registerForRemoteNotifications()
+        try? self.pushNotifications.subscribe(interest: "hello")
+        
         IQKeyboardManager.shared.enable = true
         FirebaseApp.configure()        
         return true

@@ -30,4 +30,6 @@ target 'Prentis' do
   pod 'Firebase/Performance'
   pod 'Alamofire', '~> 4.4'
   pod 'PusherSwift'
+  pod 'PushNotifications'
+
 end
