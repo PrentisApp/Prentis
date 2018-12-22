@@ -14,6 +14,7 @@ import FirebaseStorage
 import FaceAware
 import Alamofire
 import PusherSwift
+import PushNotifications
 
 class HomePageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -24,12 +25,14 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var documents = [] as [[String: Any]]
     var caller: Mentor!
     var pusher : Pusher!
+    let pushNotifications = PushNotifications.shared
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         listenForCall()
+        try? self.pushNotifications.subscribe(interest: Auth.auth().currentUser!.uid)
         
         self.navigationController?.navigationBar.layer.masksToBounds = false
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.black.cgColor

@@ -27,9 +27,9 @@
         secretKey: config.secretKey 
     });
 
-    function sendCallPN() {
+    function sendCallPN(receiver) {
 
-        pushNotifications.publish(['debug-hello'], {
+        pushNotifications.publish([receiver], {
             apns: {
                 aps: {
                     alert: 'Hello!'
@@ -65,7 +65,8 @@
     app.post('/call', (req, res, next) => {
       let payload = {channel: req.body.channel, caller: req.body.caller};
       pusher.trigger('calls', req.body.channel, payload);
-      sendCallPN();
+      sendCallPN(req.body.channel);
+      //sendCallPN("hiiiii");
       console.log("hi you just called");
       console.log("caller: " + req.body.caller);
       console.log("channel: " + req.body.channel);
