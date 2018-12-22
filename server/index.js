@@ -4,11 +4,12 @@
     // ------------------------------------------------------
 
     let Pusher     = require('pusher');
+    const PushNotifications = require('@pusher/push-notifications-server');
     let express    = require('express');
     let app        = express();
-    let bodyParser = require('body-parser')
-
-    let pusher     = new Pusher(require('./config.js'));
+    let bodyParser = require('body-parser');
+    let config = require('./config.js');
+    let pusher     = new Pusher(config);
 
     // ------------------------------------------------------
     // Set up Express middlewares
@@ -21,6 +22,26 @@
     // Define routes and logic
     // ------------------------------------------------------
 
+    let pushNotifications = new PushNotifications({
+        instanceId: config.instanceId,
+        secretKey: config.secretKey 
+    });
+
+    function sendCallPN() {
+
+        pushNotifications.publish(['debug-hello'], {
+            apns: {
+                aps: {
+                    alert: 'Hello!'
+                }
+            }
+        }).then((publishResponse) => {
+            console.log('Just published:', publishResponse.publishId);
+        }).catch((error) => {
+            console.log('Error:', error);
+        });
+
+    }
     app.post('/accept', (req, res, next) => {
         let payload = {answer: "accept"}
         pusher.trigger('answers', req.body.channel, payload);
@@ -44,7 +65,7 @@
     app.post('/call', (req, res, next) => {
       let payload = {channel: req.body.channel, caller: req.body.caller};
       pusher.trigger('calls', req.body.channel, payload);
-        
+      sendCallPN();
       console.log("hi you just called");
       console.log("caller: " + req.body.caller);
       console.log("channel: " + req.body.channel);
