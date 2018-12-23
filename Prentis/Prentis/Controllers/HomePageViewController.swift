@@ -30,6 +30,11 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let name = UserDefaults.standard.string(forKey: "caller") {
+            setCallerAndSegue(menteeUID: name)
+            UserDefaults.standard.removeObject(forKey: "caller")
+        }
+        
         
         listenForCall()
         try? self.pushNotifications.subscribe(interest: Auth.auth().currentUser!.uid)
@@ -153,23 +158,29 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 let channelName = data["channel"] as! String
                 let menteeUID = data["caller"] as! String
-                let docRef = self.db.collection("User").document(menteeUID)
-                
-                docRef.getDocument { (document, error) in
-                    if let document = document, document.exists {
-                        let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                        self.caller = Mentor(mentorDoc: document.data() as! [String: Any])
-                        self.performSegue(withIdentifier: "receiveSegue", sender: self)
-                        print("Document data: \(dataDescription)")
-                    } else {
-                        print("Document does not exist")
-                    }
-                }
+                self.setCallerAndSegue(menteeUID: menteeUID)
                 
             }
         })
         
         pusher.connect()
+    }
+    
+    func setCallerAndSegue(menteeUID: String) {
+        let docRef = self.db.collection("User").document(menteeUID)
+        
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                self.caller = Mentor(mentorDoc: document.data() as! [String: Any])
+                self.performSegue(withIdentifier: "receiveSegue", sender: self)
+                print("Document data: \(dataDescription)")
+            } else {
+                print("Document does not exist")
+            }
+        }
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
