@@ -10,28 +10,31 @@ import UIKit
 import FirebaseStorage
 import FirebaseFirestore
 import FirebaseAuth
+import Alamofire
+import PusherSwift
+
 class PopupViewController: UIViewController {
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var popupView: UIView!
-    
     @IBOutlet weak var usernameLabel: UILabel!
-    
     @IBOutlet weak var bioLabel: UILabel!
-    
     @IBOutlet weak var cancelButton: UIButton!
-    
     @IBOutlet weak var callButton: UIButton!
-    
     @IBOutlet weak var declineLabel: UILabel!
     @IBOutlet weak var line1: UIView!
     @IBOutlet weak var line2: UIView!
-    
     @IBOutlet weak var popupTopConst: NSLayoutConstraint!
+    
     var mentor: Mentor? = nil
     var db = Firestore.firestore()
+    //static let API_ENDPOINT = "http://localhost:4000";
+    static let API_ENDPOINT = "http://192.168.0.6:4000";
+    var pusher : Pusher!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         popupView.layer.shadowColor = UIColor.black.cgColor
         popupView.layer.shadowOpacity = 1
         popupView.layer.shadowOffset = CGSize.zero
@@ -52,53 +55,24 @@ class PopupViewController: UIViewController {
         popupView.layer.cornerRadius = 10
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
-            // Put your code which should be executed with a delay here
+            
             self.popupTopConst.isActive = false
             self.popupView.centerYAnchor.constraint(equalTo: (self.popupView.superview?.centerYAnchor)!).isActive = true
             UIView.animate(withDuration: 0.2, animations: {
                 self.view.layoutIfNeeded()
+                
             }, completion: {res in
-                print("did it work?")
+                
             })
         })
 
     }
     
     @IBAction func call(_ sender: Any) {
-        let menteeUID = Auth.auth().currentUser!.uid
-        let channelName = mentor!.uid! + menteeUID
-        let channel = ["menteeUID": menteeUID, "mentorUID": mentor!.uid!, "status": "calling"]
-        db.collection("User").document((self.mentor?.uid)!).collection("Call")
-            .document(channelName).setData(channel){ err in
-            if let err = err {
-                print("Error writing document: \(err)")
-            } else {
-                print("Document successfully written!")
-            }
-        }
-        db.collection("User").document((self.mentor?.uid)!).collection("Call").document(channelName).addSnapshotListener { DocumentSnapshot, error in
-            guard let document = DocumentSnapshot else {
-                print("Error fetching document: \(error)")
-                return
-            }
-            guard let data = document.data() else {
-                print("Document data was empty.")
-                return
-            }
-            print("Current data: \(data)")
-            if data["status"] as! String == "declined" {
-                print("HI YOUR CALL HAS JUST BEEN DECLINED")
-                self.onDecline()
-                
-                
-            } else if data["status"] as! String == "accepted" {
-                print("HI YOUR CALL HAS JUST BEEN ACCEPTED")
-                self.performSegue(withIdentifier: "onAcceptSegue", sender: self)
-                
-            }
-            
-        }
+        callRequest()
+        listenForAnswer()
     }
+    
     func onDecline() {
         cancelButton.isHidden = true
         callButton.isHidden = true
@@ -131,6 +105,48 @@ class PopupViewController: UIViewController {
         }
     }
     
+    public func callRequest() {
+        let params: Parameters = ["channel": mentor!.uid!, "caller": Auth.auth().currentUser!.uid]
+        
+        Alamofire.request(PopupViewController.API_ENDPOINT + "/call", method: .post, parameters: params).validate().responseJSON { response in
+            switch response.result {
+                
+            case .success:
+                _ = "Updated"
+                
+            case .failure(let error):
+                print(error)
+                
+            }
+        }
+    }
+    
+    
+    private func listenForAnswer() {
+        let key = "200b87f4cd87ab883b75"
+        let cluster = "us2"
+        let channelName = (mentor?.uid)! + Auth.auth().currentUser!.uid
+        pusher = Pusher(key: key, options: PusherClientOptions(host: .cluster(cluster)))
+
+        let channel = pusher.subscribe("answers")
+        let _ = channel.bind(eventName: channelName, callback: { (data: Any?) -> Void in
+            
+            if let data = data as? [String: AnyObject] {
+                
+                if data["answer"] as! String == "accept" {
+                    self.performSegue(withIdentifier: "onAcceptSegue", sender: self)
+                    
+                } else if data["answer"] as! String == "decline" {
+                    self.onDecline()
+                    
+                }
+            }
+        })
+        
+        pusher.connect()
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let channelName = (mentor?.uid)! + Auth.auth().currentUser!.uid
         let localUID: UInt = 6
@@ -139,7 +155,7 @@ class PopupViewController: UIViewController {
         (segue.destination as! CallController).channelName = channelName
         (segue.destination as! CallController).localUID = localUID
         (segue.destination as! CallController).remoteUID = remoteUID
+        
     }
     
-
 }

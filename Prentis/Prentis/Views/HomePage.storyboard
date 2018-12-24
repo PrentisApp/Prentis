@@ -13,13 +13,13 @@
         <!--Receive Call Controller-->
         <scene sceneID="Wkf-WN-0fe">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="4Zh-uy-pel" customClass="ReceiveCallController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="4Zh-uy-pel" customClass="ReceiveCallController" customModule="Prentis" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nok-cc-YIx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6f-EL-IN2">
-                                <rect key="frame" x="58" y="230.5" width="259" height="206"/>
+                                <rect key="frame" x="58" y="667" width="259" height="206"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MO-Fo-hAc">
                                         <rect key="frame" x="0.0" y="163" width="129" height="43"/>
@@ -109,15 +109,16 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.7336872799295775" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.43653295977555279" green="0.46186150835972178" blue="0.47700104534317178" alpha="0.34732614436619719" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="F6f-EL-IN2" firstAttribute="centerY" secondItem="Nok-cc-YIx" secondAttribute="centerY" id="Dbg-jK-Gac"/>
+                            <constraint firstItem="F6f-EL-IN2" firstAttribute="top" secondItem="Nok-cc-YIx" secondAttribute="bottom" id="Dbg-jK-Gac"/>
                             <constraint firstItem="F6f-EL-IN2" firstAttribute="centerX" secondItem="Nok-cc-YIx" secondAttribute="centerX" id="aqP-Pz-TUg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vsA-S7-5I4"/>
                     </view>
                     <connections>
                         <outlet property="bioLabel" destination="4zl-XW-oQ8" id="nn3-5M-TnP"/>
+                        <outlet property="popupTopConst" destination="Dbg-jK-Gac" id="VVL-MN-d9D"/>
                         <outlet property="popupView" destination="F6f-EL-IN2" id="spS-r9-caj"/>
                         <outlet property="profileImage" destination="N0g-aZ-6Yj" id="rOi-30-tAF"/>
                         <outlet property="usernameLabel" destination="nBX-zI-9Cp" id="NOm-l3-Vvk"/>
@@ -440,6 +441,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="azq-T1-0cW"/>
+        <segue reference="RS0-u1-L3Q"/>
     </inferredMetricsTieBreakers>
 </document>
