@@ -1,4 +1,5 @@
 Prentis/Pods/
+*.lock
 prentisapp-50e4e-firebase-adminsdk-vvo4f-67dfbe422e.json
 *.xcuserstate
 server/config.js
