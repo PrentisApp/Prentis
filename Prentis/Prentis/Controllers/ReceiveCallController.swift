@@ -19,6 +19,7 @@ class ReceiveCallController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var popupView: UIView!
+    @IBOutlet weak var popupTopConst: NSLayoutConstraint!
     
     var caller: Mentor? = nil
     var db = Firestore.firestore()
@@ -44,6 +45,18 @@ class ReceiveCallController: UIViewController {
         profileImage.clipsToBounds = true
         
         popupView.layer.cornerRadius = 10
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+            
+            self.popupTopConst.isActive = false
+            self.popupView.centerYAnchor.constraint(equalTo: (self.popupView.superview?.centerYAnchor)!).isActive = true
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.layoutIfNeeded()
+                
+            }, completion: {res in
+                
+            })
+        })
     }
     
     func imageForPath(path: String) {
