@@ -92,19 +92,15 @@ class UserCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExpertiseCell", for: indexPath) as! ExpertiseCell
         var m = expertiseArr[indexPath.row] as! String
         m.capitalizeFirstLetter()
-        print("Hey this is Kevin \(m)")
         let docRef = db.collection("Interexpertestis").document(m)
         
         
         
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
-                print("yes \(m)")
                 let k = document["Category"] as! String
-                print(k)
                 cell.expertiseLabel.backgroundColor = self.categories[k]
             } else {
-                print("no \(m)")
                 cell.expertiseLabel.backgroundColor = self.categories["Technology"]
             }
         }

@@ -26,16 +26,29 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var caller: Mentor!
     var pusher : Pusher!
     let pushNotifications = PushNotifications.shared
+//    override func viewDidAppear(_ animated: Bool) {
+//        print("hey view did appear")
+//        if let name = UserDefaults.standard.string(forKey: "caller") {
+//            UserDefaults.standard.removeObject(forKey: "caller")
+//            setCallerAndSegue(menteeUID: name)
+//        }
+//    }
+    @objc func listenForOfflineCall() {
+        print("HEYYYY this is the offline one")
+        if let name = UserDefaults.standard.string(forKey: "caller") {
+            print("This should not be repeated")
+            UserDefaults.standard.removeObject(forKey: "caller")
+
+            setCallerAndSegue(menteeUID: name)
+        }
+    }
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let name = UserDefaults.standard.string(forKey: "caller") {
-            setCallerAndSegue(menteeUID: name)
-            UserDefaults.standard.removeObject(forKey: "caller")
-        }
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(listenForOfflineCall), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        listenForOfflineCall()
         listenForCall()
         try? self.pushNotifications.subscribe(interest: Auth.auth().currentUser!.uid)
         
@@ -148,17 +161,15 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         let key = "200b87f4cd87ab883b75"
         let cluster = "us2"
         let uid = Auth.auth().currentUser!.uid
-        print("this whole method was called")
-        print("UID: \(uid)")
         pusher = Pusher(key: key, options: PusherClientOptions(host: .cluster(cluster)))
         
         let channel = pusher.subscribe("calls")
         let _ = channel.bind(eventName: uid, callback: { (data: Any?) -> Void in
             if let data = data as? [String: AnyObject] {
-                
                 let channelName = data["channel"] as! String
                 let menteeUID = data["caller"] as! String
                 self.setCallerAndSegue(menteeUID: menteeUID)
+                
                 
             }
         })
@@ -174,7 +185,6 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 self.caller = Mentor(mentorDoc: document.data() as! [String: Any])
                 self.performSegue(withIdentifier: "receiveSegue", sender: self)
-                print("Document data: \(dataDescription)")
             } else {
                 print("Document does not exist")
             }

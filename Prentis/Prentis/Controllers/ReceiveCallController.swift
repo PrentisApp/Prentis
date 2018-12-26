@@ -25,7 +25,6 @@ class ReceiveCallController: UIViewController {
     var db = Firestore.firestore()
     var pusher : Pusher!
     static let API_ENDPOINT = "http://192.168.0.6:4000";
-
     override func viewDidLoad() {
         super.viewDidLoad()
         popupView.layer.shadowColor = UIColor.black.cgColor
@@ -89,6 +88,9 @@ class ReceiveCallController: UIViewController {
     }
     
     @IBAction func onDecline(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "caller")
+        let name = UserDefaults.standard.string(forKey: "caller")
+        print("decline \(name)")
         
         let channelName = Auth.auth().currentUser!.uid + (caller?.uid)!
         answerRequest(channel: channelName, accept: false)

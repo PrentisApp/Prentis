@@ -29,10 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         self.pushNotifications.handleNotification(userInfo: userInfo)
+        print("hi you just entered before")
         guard let aps = userInfo["aps"] as? [String: AnyObject] else {
             completionHandler(.failed)
             return
         }
+        print("hi you just entered after")
+        UserDefaults.standard.set(aps["caller"], forKey: "caller")
+
     }
     
     //var ref: DatabaseReference!
@@ -57,21 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func controllerType(type: String) {
-        let params: Parameters = ["type": type]
-        
-        Alamofire.request(PopupViewController.API_ENDPOINT + "/debug-type", method: .post, parameters: params).validate().responseJSON { response in
-            switch response.result {
-                
-            case .success:
-                _ = "Updated"
-                
-            case .failure(let error):
-                print(error)
-                
-            }
-        }
-    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
