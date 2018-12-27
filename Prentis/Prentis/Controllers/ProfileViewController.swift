@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController, UITextViewDelegate {
         bioText.layer.cornerRadius = 4
         bioText.layer.borderWidth = 0.5
         bioText.layer.borderColor = UIColor.lightGray.cgColor
-//
+
         signOutButton.layer.cornerRadius = 4
         signOutButton.layer.borderWidth = 1
         signOutButton.layer.borderColor = UIColor.lightGray.cgColor
@@ -78,7 +78,6 @@ class ProfileViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        print("Kevin Assitores This was called")
         let docRef = db.collection("User").document((Auth.auth().currentUser?.uid)!)
         docRef.updateData([
             "bio": bioText.text,
@@ -97,15 +96,5 @@ class ProfileViewController: UIViewController, UITextViewDelegate {
         let signInPage = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
         self.present(signInPage, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

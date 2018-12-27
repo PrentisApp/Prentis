@@ -26,24 +26,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     var caller: Mentor!
     var pusher : Pusher!
     let pushNotifications = PushNotifications.shared
-//    override func viewDidAppear(_ animated: Bool) {
-//        print("hey view did appear")
-//        if let name = UserDefaults.standard.string(forKey: "caller") {
-//            UserDefaults.standard.removeObject(forKey: "caller")
-//            setCallerAndSegue(menteeUID: name)
-//        }
-//    }
-    @objc func listenForOfflineCall() {
-        print("HEYYYY this is the offline one")
-        if let name = UserDefaults.standard.string(forKey: "caller") {
-            print("This should not be repeated")
-            UserDefaults.standard.removeObject(forKey: "caller")
 
-            setCallerAndSegue(menteeUID: name)
-        }
-    }
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +47,7 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
                 let defaults = UserDefaults.standard
                 defaults.set(document["interests"] as! [String], forKey: "interestsArray")
                 defaults.set(document["expertise"] as! [String], forKey: "expertiseArray")
+                defaults.set(document["username"] as! String, forKey: "username")
                 
             } else {
                 print("Document does not exist")
@@ -87,6 +71,13 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
         userTable.delegate = self
         let mentorUID = Auth.auth().currentUser!.uid
 
+    }
+    
+    @objc func listenForOfflineCall() {
+        if let name = UserDefaults.standard.string(forKey: "caller") {
+            UserDefaults.standard.removeObject(forKey: "caller")
+            setCallerAndSegue(menteeUID: name)
+        }
     }
     
     func numberOfSections(in userTable: UITableView) -> Int {
@@ -194,16 +185,12 @@ class HomePageViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        //print("uid \(mentor.uid!)")
         if segue.identifier == "popupSegue" {
             let mentor = (sender as! UserCell).mentor! as Mentor
             (segue.destination as! PopupViewController).mentor = mentor
         } else if segue.identifier == "receiveSegue" {
             (segue.destination as! ReceiveCallController).caller = caller
         }
-        
     }
 
 }

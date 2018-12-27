@@ -106,7 +106,7 @@ class PopupViewController: UIViewController {
     }
     
     public func callRequest() {
-        let params: Parameters = ["channel": mentor!.uid!, "caller": Auth.auth().currentUser!.uid]
+        let params: Parameters = ["channel": mentor!.uid!, "caller": Auth.auth().currentUser!.uid, "username": UserDefaults.standard.string(forKey: "username")!]
         
         Alamofire.request(PopupViewController.API_ENDPOINT + "/call", method: .post, parameters: params).validate().responseJSON { response in
             switch response.result {

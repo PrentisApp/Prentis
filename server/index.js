@@ -27,13 +27,14 @@
         secretKey: config.secretKey 
     });
 
-    function sendCallPN(receiver, caller) {
+    function sendCallPN(receiver, caller, username) {
 
         pushNotifications.publish([receiver], {
             apns: {
                 aps: {
-                    alert: 'Hello!',
+                    alert: 'You have an incoming call from ' + username,
                     caller: caller
+
                 }
             }
         }).then((publishResponse) => {
@@ -66,12 +67,12 @@
     app.post('/call', (req, res, next) => {
       let payload = {channel: req.body.channel, caller: req.body.caller};
       pusher.trigger('calls', req.body.channel, payload);
-      sendCallPN(req.body.channel, req.body.caller);
+      sendCallPN(req.body.channel, req.body.caller, req.body.username);
       //sendCallPN("hiiiii");
       console.log("hi you just called");
       console.log("caller: " + req.body.caller);
       console.log("channel: " + req.body.channel);
-
+      console.log("username: " + req.body.username);
       res.json({success: 200});
     });
 
