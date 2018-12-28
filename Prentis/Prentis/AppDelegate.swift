@@ -13,15 +13,13 @@ import FirebaseDatabase
 import IQKeyboardManagerSwift
 import PushNotifications
 import Alamofire
-
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     let pushNotifications = PushNotifications.shared
-    
-
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         self.pushNotifications.registerDeviceToken(deviceToken)
@@ -36,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         print("hi you just entered after")
         UserDefaults.standard.set(aps["caller"], forKey: "caller")
-
+        completionHandler(.newData)
     }
     
     //var ref: DatabaseReference!
@@ -54,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.pushNotifications.start(instanceId: "4ae3f5f0-a0ec-4b96-8ac1-aa02de51c422")
         self.pushNotifications.registerForRemoteNotifications()
+        UNUserNotificationCenter.current().delegate = self
+
         //try? self.pushNotifications.subscribe(interest: "debug-hello")
         
         IQKeyboardManager.shared.enable = true
@@ -84,5 +84,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+                if response.actionIdentifier == "accept" {
+                        print("Handle accept action identifier")
+                    } else if response.actionIdentifier == "decline" {
+                        print("Handle decline action identifier")
+                    } else {
+                        print("No custom action identifiers chosen")
+                    }
+                // Make sure completionHandler method is at the bottom of this func
+                completionHandler()
+            }
+    
 }
 

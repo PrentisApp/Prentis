@@ -32,9 +32,13 @@
         pushNotifications.publish([receiver], {
             apns: {
                 aps: {
-                    alert: 'You have an incoming call from ' + username,
-                    caller: caller
-
+                    "mutable-content": 1,
+                    alert: {
+                        title: "Call",
+                        body: 'You have an incoming call from ' + username
+                    },
+                    caller: caller,
+                    category: "call"
                 }
             }
         }).then((publishResponse) => {
